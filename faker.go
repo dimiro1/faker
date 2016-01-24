@@ -4,10 +4,13 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+
+	"github.com/dimiro1/faker/locales"
 )
 
 type Faker struct {
-	Locale string
+	Locale  string
+	Locales map[string]locales.Locale
 }
 
 type FakerOptions struct {
@@ -36,6 +39,7 @@ func NewFaker(options FakerOptions) (Faker, error) {
 	rand.Seed(options.Seed)
 
 	return Faker{
-		Locale: options.Locale,
+		Locale:  options.Locale,
+		Locales: locales.Supported(),
 	}, nil
 }
