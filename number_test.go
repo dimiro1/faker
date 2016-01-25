@@ -5,15 +5,18 @@ import (
 	"testing"
 )
 
+var f Faker
+
+func init() {
+	f = NewDefaultFaker()
+}
+
 func TestNumber(t *testing.T) {
-	f := NewDefaultFaker()
 	size := 5
 	assertStringRegexp(t, fmt.Sprintf("^\\d{%d}$", size), f.Number(size))
 }
 
 func TestNumberWithWrongParam(t *testing.T) {
-	f := NewDefaultFaker()
-
 	defer func() {
 		if r := recover(); r == nil {
 			t.Error("Should panic with wrong digits parameter")
@@ -24,7 +27,6 @@ func TestNumberWithWrongParam(t *testing.T) {
 }
 
 func TestHexadecimal(t *testing.T) {
-	f := NewDefaultFaker()
 	size := 5
 	assertStringRegexp(t, fmt.Sprintf("^[\\da-f]{%d}$", size), f.Hexadecimal(size))
 }
@@ -42,8 +44,6 @@ func TestHexadecimalWithWrongParam(t *testing.T) {
 }
 
 func TestNumberBetween(t *testing.T) {
-	f := NewDefaultFaker()
-
 	input := [][]int{
 		{0, 0},
 		{0, 10},
@@ -60,6 +60,24 @@ func TestNumberBetween(t *testing.T) {
 
 		if !((n >= first && n <= second) || (n <= first && n >= second)) {
 			t.Errorf("Number must be between first inclusive and second inclusive: (n=%d, first=%d, second=%d)", n, first, second)
+		}
+	}
+}
+
+func TestPositiveNumber(t *testing.T) {
+	for i := 0; i < 100; i++ {
+		n := f.PositiveNumber()
+		if n < 0 {
+			t.Errorf("PositiveNumber must return only positive numbers: %d", n)
+		}
+	}
+}
+
+func TestNegativeNumber(t *testing.T) {
+	for i := 0; i < 100; i++ {
+		n := f.NegativeNumber()
+		if n >= 0 {
+			t.Errorf("NegativeNumber must return only negative numbers: %d", n)
 		}
 	}
 }

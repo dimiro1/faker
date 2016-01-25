@@ -55,10 +55,12 @@ func (f Faker) NumberBetween(first, second int) int {
 	return int(math.Floor(rand.Float64()*float64(second-first+1)) + float64(first))
 }
 
+// PositiveNumber returns an positive int between 0 (inclusive) and math.MaxUint32 (inclusive)
 func (f Faker) PositiveNumber() int {
-	return 28
+	return f.NumberBetween(0, math.MaxUint32)
 }
 
+// NegativeNumber returns an positive int between math.MinInt32 (inclusive) and -1 (inclusive)
 func (f Faker) NegativeNumber() int {
-	return -28
+	return f.NumberBetween(math.MinInt32, -1)
 }
