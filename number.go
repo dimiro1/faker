@@ -1,51 +1,49 @@
 package faker
 
 import (
-	"bytes"
 	"fmt"
 	"math"
 	"math/rand"
+	"strconv"
 )
-
-var numbers = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"}
-var alpha = []string{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b", "c", "d", "e", "f"}
-
-func randomElementFromSlice(s []string) string {
-	n := rand.Intn(len(s))
-
-	return s[n]
-}
-
-func randomElements(digits int, slice []string, fn string) string {
-	if digits < 1 {
-		panic(fmt.Sprintf("%s: digits must be greater than 0", fn))
-	}
-
-	var buffer bytes.Buffer
-
-	for i := 0; i < digits; i++ {
-		buffer.WriteString(randomElementFromSlice(slice))
-	}
-
-	return buffer.String()
-}
-
-// Number returns a number with digits length
-// it will panic if digits is less than 1
-func (f Faker) Number(digits int) string {
-	return randomElements(digits, numbers, "Number")
-}
 
 // Decimal returns a decimal number with digits length and places decimal places length
 // it will panic if digits is less than 1
 func (f Faker) Decimal(digits, places int) string {
-	return fmt.Sprintf("%s.%s", f.Number(digits), f.Number(places))
+	return fmt.Sprintf("%d.%d", f.Number(digits), f.Number(places))
+}
+
+// Digit returns an positive int between 0 (inclusive) and 9 (inclusive)
+func (f Faker) Digit() int {
+	return f.NumberBetween(0, 9)
 }
 
 // Hexadecimal returns a alpha numeric with digits length
 // it will panic if digits is less than 1
 func (f Faker) Hexadecimal(digits int) string {
-	return randomElements(digits, alpha, "Hexadecimal")
+	return hexify(fillString("*", digits))
+}
+
+// NegativeNumber returns an positive int between math.MinInt32 (inclusive) and -1 (inclusive)
+func (f Faker) NegativeNumber() int {
+	return f.NumberBetween(math.MinInt32, -1)
+}
+
+// Number returns a number with digits length
+// it will panic if digits is less than 1
+// TODO: Remove usage of randomElements in favor of numerify, lexify etc functions
+func (f Faker) Number(digits int) int {
+	// The first element can not be zero
+	s := randomFromSlice(noZero)
+	s += randomElements(digits-1, numbers, "Number")
+
+	n, err := strconv.Atoi(s)
+
+	if err != nil {
+		panic("Number: This error should never happen. Please take a look at the numbers slice")
+	}
+
+	return n
 }
 
 // NumberBetween returns a random integer between first (inclusive) and second (inclusive)
@@ -56,9 +54,4 @@ func (f Faker) NumberBetween(first, second int) int {
 // PositiveNumber returns an positive int between 0 (inclusive) and math.MaxUint32 (inclusive)
 func (f Faker) PositiveNumber() int {
 	return f.NumberBetween(0, math.MaxUint32)
-}
-
-// NegativeNumber returns an positive int between math.MinInt32 (inclusive) and -1 (inclusive)
-func (f Faker) NegativeNumber() int {
-	return f.NumberBetween(math.MinInt32, -1)
 }

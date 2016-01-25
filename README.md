@@ -12,6 +12,11 @@ A package that generates fake data for GO
 
 ```
 
+## API
+
+I am defining the API so This API is not stable and can be modified at any time.
+
+
 ## Error handling
 
 In this project I preferred panic instead of explicit error returns to keep the API clean and uniform. I think this project must be

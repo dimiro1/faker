@@ -5,6 +5,7 @@ import (
 	"testing"
 )
 
+// Help test regular expressions
 func assertStringRegexp(t *testing.T, pattern, s string) {
 	matches, _ := regexp.MatchString(pattern, s)
 
