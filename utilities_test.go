@@ -3,8 +3,8 @@ package faker
 import "testing"
 
 func TestBothify(t *testing.T) {
-	s := bothify("Hello &&&")
-	assertStringRegexp(t, "Hello \\w{3}", s)
+	s := bothify("&&&")
+	assertStringRegexp(t, "^\\w{3}$", s)
 }
 
 func TestFillString(t *testing.T) {
@@ -13,16 +13,21 @@ func TestFillString(t *testing.T) {
 }
 
 func TestNumerify(t *testing.T) {
-	s := numerify("Hello ###")
-	assertStringRegexp(t, "Hello \\d{3}", s)
+	s := numerify("###")
+	assertStringRegexp(t, "^\\d{3}$", s)
+}
+
+func TestNumerifyGreaterThanZero(t *testing.T) {
+	s := numerifyGreaterThanZero("@@@")
+	assertStringRegexp(t, "^[1-9]{3}$", s)
 }
 
 func TestLexify(t *testing.T) {
-	s := lexify("Hello ???")
-	assertStringRegexp(t, "Hello [a-z]{3}", s)
+	s := lexify("???")
+	assertStringRegexp(t, "^[a-z]{3}$", s)
 }
 
 func TestHexify(t *testing.T) {
-	s := hexify("Hello ***")
-	assertStringRegexp(t, "Hello [\\da-f]{3}", s)
+	s := hexify("***")
+	assertStringRegexp(t, "^[\\da-f]{3}$", s)
 }

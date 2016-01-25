@@ -50,6 +50,10 @@ func numerify(s string) string {
 	return replace("#", s, numbers)
 }
 
+func numerifyGreaterThanZero(s string) string {
+	return replace("@", s, noZero)
+}
+
 func randomElements(digits int, slice []string, fn string) string {
 	if digits < 1 {
 		panic(fmt.Sprintf("%s: digits must be greater than 0", fn))

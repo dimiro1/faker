@@ -31,11 +31,11 @@ func (f Faker) NegativeNumber() int {
 
 // Number returns a number with digits length
 // it will panic if digits is less than 1
-// TODO: Remove usage of randomElements in favor of numerify, lexify etc functions
 func (f Faker) Number(digits int) int {
-	// The first element can not be zero
-	s := anyFromSlice(noZero)
-	s += randomElements(digits-1, numbers, "Number")
+	// The first char can not be zero
+	s := "@"
+	s += fillString("#", digits-1)
+	s = numerify(numerifyGreaterThanZero(s))
 
 	n, err := strconv.Atoi(s)
 
