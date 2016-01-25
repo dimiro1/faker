@@ -2,7 +2,6 @@ package faker
 
 import (
 	"bytes"
-	"fmt"
 	"math/rand"
 	"regexp"
 )
@@ -52,20 +51,6 @@ func numerify(s string) string {
 
 func numerifyGreaterThanZero(s string) string {
 	return replace("@", s, noZero)
-}
-
-func randomElements(digits int, slice []string, fn string) string {
-	if digits < 1 {
-		panic(fmt.Sprintf("%s: digits must be greater than 0", fn))
-	}
-
-	var buffer bytes.Buffer
-
-	for i := 0; i < digits; i++ {
-		buffer.WriteString(anyFromSlice(slice))
-	}
-
-	return buffer.String()
 }
 
 func anyFromSlice(s []string) string {
