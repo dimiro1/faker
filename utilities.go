@@ -21,7 +21,7 @@ var (
 )
 
 func bothify(s string) string {
-	return replaceSymbol("&", s, alpha)
+	return replace("&", s, alpha)
 }
 
 func fillString(sym string, len int) string {
@@ -39,15 +39,15 @@ func fillString(sym string, len int) string {
 }
 
 func lexify(s string) string {
-	return replaceSymbol("\\?", s, letters)
+	return replace("\\?", s, letters)
 }
 
 func hexify(s string) string {
-	return replaceSymbol("\\*", s, hex)
+	return replace("\\*", s, hex)
 }
 
 func numerify(s string) string {
-	return replaceSymbol("#", s, numbers)
+	return replace("#", s, numbers)
 }
 
 func randomElements(digits int, slice []string, fn string) string {
@@ -58,20 +58,20 @@ func randomElements(digits int, slice []string, fn string) string {
 	var buffer bytes.Buffer
 
 	for i := 0; i < digits; i++ {
-		buffer.WriteString(randomFromSlice(slice))
+		buffer.WriteString(anyFromSlice(slice))
 	}
 
 	return buffer.String()
 }
 
-func randomFromSlice(s []string) string {
+func anyFromSlice(s []string) string {
 	return s[rand.Intn(len(s))]
 }
 
-func replaceSymbol(sym, s string, slice []string) string {
+func replace(sym, s string, slice []string) string {
 	r := regexp.MustCompile(sym)
 
 	return r.ReplaceAllStringFunc(s, func(original string) string {
-		return randomFromSlice(slice)
+		return anyFromSlice(slice)
 	})
 }

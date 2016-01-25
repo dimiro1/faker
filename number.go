@@ -34,7 +34,7 @@ func (f Faker) NegativeNumber() int {
 // TODO: Remove usage of randomElements in favor of numerify, lexify etc functions
 func (f Faker) Number(digits int) int {
 	// The first element can not be zero
-	s := randomFromSlice(noZero)
+	s := anyFromSlice(noZero)
 	s += randomElements(digits-1, numbers, "Number")
 
 	n, err := strconv.Atoi(s)
