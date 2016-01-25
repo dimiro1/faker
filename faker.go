@@ -32,7 +32,7 @@ func NewDefaultFaker() Faker {
 	})
 
 	if err != nil {
-		panic(fmt.Sprintf("This should never happen: %+v\n", err))
+		panic(fmt.Sprintf("NewDefaultFaker: NewFaker returned an error with valid options %+v\n", err))
 	}
 
 	return f
@@ -43,7 +43,7 @@ func NewFaker(options Options) (Faker, error) {
 
 	// Validate Locale
 	if !locales.IsValid(options.Locale) {
-		return Faker{}, fmt.Errorf("%s is an invalid locale", options.Locale)
+		return Faker{}, fmt.Errorf("NewFaker: %s is an invalid locale", options.Locale)
 	}
 
 	// Seeding the random
