@@ -81,3 +81,9 @@ func TestNegativeNumber(t *testing.T) {
 		}
 	}
 }
+
+func TestDecimal(t *testing.T) {
+	digits := 5
+	places := 5
+	assertStringRegexp(t, fmt.Sprintf("^\\d{%d}\\.\\d{%d}$", digits, places), f.Decimal(digits, places))
+}

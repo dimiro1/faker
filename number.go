@@ -30,18 +30,16 @@ func randomElements(digits int, slice []string, fn string) string {
 	return buffer.String()
 }
 
-func (f Faker) EAN() string {
-	return "EAN"
-}
-
 // Number returns a number with digits length
 // it will panic if digits is less than 1
 func (f Faker) Number(digits int) string {
 	return randomElements(digits, numbers, "Number")
 }
 
+// Decimal returns a decimal number with digits length and places decimal places length
+// it will panic if digits is less than 1
 func (f Faker) Decimal(digits, places int) string {
-	return "19683.53479"
+	return fmt.Sprintf("%s.%s", f.Number(digits), f.Number(places))
 }
 
 // Hexadecimal returns a alpha numeric with digits length
