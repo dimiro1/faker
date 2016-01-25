@@ -10,5 +10,6 @@ func main() {
 	fake := faker.NewDefaultFaker()
 	fmt.Println(fake.City())
 	fmt.Println(fake.UserAgent())
+	fmt.Println(fake.BrazilCPF())
 	fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }

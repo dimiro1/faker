@@ -8,19 +8,26 @@ import (
 	"github.com/dimiro1/faker/locales"
 )
 
+// DefaultLocale is a constant that defines the default locale used in the default configuration.
+const DefaultLocale = "en"
+
+// Faker is the main API
+// it also holds some config
 type Faker struct {
-	Locale  string
-	Locales map[string]locales.Locale
+	CurrentLocale string
+	Locales       map[string]locales.Locale
 }
 
-type FakerOptions struct {
+// Options is used to pass configuration options to Faker
+type Options struct {
 	Locale string
 	Seed   int64
 }
 
+// NewDefaultFaker creates a new Faker with default configuration
 func NewDefaultFaker() Faker {
-	f, err := NewFaker(FakerOptions{
-		Locale: "en",
+	f, err := NewFaker(Options{
+		Locale: DefaultLocale,
 		Seed:   time.Now().UTC().UnixNano(),
 	})
 
@@ -31,15 +38,19 @@ func NewDefaultFaker() Faker {
 	return f
 }
 
-func NewFaker(options FakerOptions) (Faker, error) {
+// NewFaker creates a new Faker with configuration passed in options
+func NewFaker(options Options) (Faker, error) {
+
 	// Validate Locale
-	// Validate Seed
+	if !locales.IsValid(options.Locale) {
+		return Faker{}, fmt.Errorf("%s is an invalid locale", options.Locale)
+	}
 
 	// Seeding the random
 	rand.Seed(options.Seed)
 
 	return Faker{
-		Locale:  options.Locale,
-		Locales: locales.Supported(),
+		CurrentLocale: options.Locale,
+		Locales:       locales.Supported(),
 	}, nil
 }
