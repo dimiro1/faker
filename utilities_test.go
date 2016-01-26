@@ -7,6 +7,15 @@ func TestBothify(t *testing.T) {
 	assertStringRegexp(t, "^\\w{3}$", s)
 }
 
+func TestInternalDigit(t *testing.T) {
+	for i := 0; i < 100; i++ {
+		n := digit()
+		if n < 0 || n > 9 {
+			t.Errorf("Digit must return digits from 0 inclusive to 9 inclusive: %d", n)
+		}
+	}
+}
+
 func TestFillString(t *testing.T) {
 	s := fillString("#", 10)
 	assertStringRegexp(t, "^[#]{10}$", s)

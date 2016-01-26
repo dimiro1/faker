@@ -1,43 +1,77 @@
 package faker
 
-import (
-	"fmt"
-	"strconv"
-	"strings"
-)
+import "fmt"
 
 // BrazilCNPJ Generates a valid Brazilian CNPJ
+// See: https://pt.wikipedia.org/wiki/Cadastro_Nacional_da_Pessoa_Jur%C3%ADdica
 func (f Faker) BrazilCNPJ() string {
-	return "45.294.670/0001-04"
+	v := [2]int{}
+	cnpj := sliceOfRandonNumbers(12)
+	cnpj[8] = 0
+	cnpj[9] = 0
+	cnpj[10] = 0
+
+	// First Digit
+	m0 := []int{5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2}
+
+	for i, n := range m0 {
+		v[0] += n * cnpj[i]
+	}
+
+	v[0] = 11 - v[0]%11
+
+	if v[0] >= 10 {
+		v[0] = 0
+	}
+
+	// Second Digit
+	m1 := []int{6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3}
+
+	for i, n := range m1 {
+		v[1] += n * cnpj[i]
+	}
+
+	v[1] += 2 * v[0]
+	v[1] = 11 - v[1]%11
+
+	if v[1] >= 10 {
+		v[1] = 0
+	}
+
+	return fmt.Sprintf(
+		"%d%d.%d%d%d.%d%d%d/%d%d%d%d-%d%d",
+		cnpj[0], cnpj[1], cnpj[2], cnpj[3], cnpj[4], cnpj[5],
+		cnpj[6], cnpj[7], cnpj[8], cnpj[9], cnpj[10], cnpj[11], v[0], v[1],
+	)
+	// return "45.294.670/0001-04"
 }
 
 // BrazilCPF Generates a valid Brazilian CPF
-// CPF is a number composed of 11 digits
+// See https://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
 func (f Faker) BrazilCPF() string {
-	cpf := "###.###.###"
-	cpf = numerify(cpf)
-
-	s := strings.Replace(cpf, ".", "", -1)
-
 	v := [2]int{}
-	sliceCpf := strings.Split(s, "")
-	sliceIntCpf := [11]int{}
+	cpf := sliceOfRandonNumbers(11)
 
-	for i, d := range sliceCpf {
-		sliceIntCpf[i], _ = strconv.Atoi(d)
+	// First Digit
+	for i := 1; i <= 9; i++ {
+		v[0] += i * cpf[i-1]
 	}
 
-	v[0] = sliceIntCpf[0] + 2*sliceIntCpf[1] + 3*sliceIntCpf[2]
-	v[0] += 4*sliceIntCpf[3] + 5*sliceIntCpf[4] + 6*sliceIntCpf[5]
-	v[0] += 7*sliceIntCpf[6] + 8*sliceIntCpf[7] + 9*sliceIntCpf[8]
 	v[0] = v[0] % 11
 	v[0] = v[0] % 10
 
-	v[1] = sliceIntCpf[1] + 2*sliceIntCpf[2] + 3*sliceIntCpf[3]
-	v[1] += 4*sliceIntCpf[4] + 5*sliceIntCpf[5] + 6*sliceIntCpf[6]
-	v[1] += 7*sliceIntCpf[7] + 8*sliceIntCpf[8] + 9*v[0]
+	// Second Digit
+	for i := 1; i <= 8; i++ {
+		v[1] += i * cpf[i]
+	}
+
+	v[1] += 9 * v[0]
 	v[1] = v[1] % 11
 	v[1] = v[1] % 10
 
-	return fmt.Sprintf("%s-%d%d", cpf, v[0], v[1])
+	return fmt.Sprintf(
+		"%d%d%d.%d%d%d.%d%d%d-%d%d",
+		cpf[0], cpf[1], cpf[2], cpf[3], cpf[4],
+		cpf[5], cpf[6], cpf[7], cpf[8], v[0], v[1],
+	)
 }

@@ -2,8 +2,10 @@ package faker
 
 import (
 	"bytes"
+	"math"
 	"math/rand"
 	"regexp"
+	"strconv"
 )
 
 var (
@@ -35,6 +37,39 @@ func fillString(sym string, len int) string {
 	}
 
 	return buffer.String()
+}
+
+func digit() int {
+	return numberBetween(0, 9)
+}
+
+func number(len int) int {
+	// The first char can not be zero
+	s := "@"
+	s += fillString("#", len-1)
+	s = numerify(numerifyGreaterThanZero(s))
+
+	n, err := strconv.Atoi(s)
+
+	if err != nil {
+		panic("Number: This error should never happen. Please take a look at the numbers slice")
+	}
+
+	return n
+}
+
+func numberBetween(first, second int) int {
+	return int(math.Floor(rand.Float64()*float64(second-first+1)) + float64(first))
+}
+
+func sliceOfRandonNumbers(len int) []int {
+	var nums []int
+
+	for i := 0; i < len; i++ {
+		nums = append(nums, numberBetween(0, 9))
+	}
+
+	return nums
 }
 
 func lexify(s string) string {
