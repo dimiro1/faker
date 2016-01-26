@@ -4,8 +4,9 @@ func (f Faker) AppName() string {
 	return "Software X"
 }
 
+// AppVersion returns a fake three digit version MAJOR MINOR and PATCH
 func (f Faker) AppVersion() string {
-	return "1.0.1"
+	return numerify("#.#.#")
 }
 
 func (f Faker) AppAuthor() string {
