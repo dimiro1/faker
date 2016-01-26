@@ -2,6 +2,7 @@ package locales
 
 func en_locale() Locale {
 	return Locale{
+		Code:       "en",
 		CityPrefix: []string{"North", "East", "West", "South", "New", "Lake", "Port"},
 		CitySuffix: []string{"town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt", "chester", "mouth", "fort", "haven", "side", "shire"},
 		CountryNames: []string{

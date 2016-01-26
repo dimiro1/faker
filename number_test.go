@@ -9,7 +9,7 @@ import (
 var f Faker
 
 func init() {
-	f = NewDefaultFaker()
+	f = NewDefault()
 }
 
 func TestDecimal(t *testing.T) {
@@ -33,8 +33,6 @@ func TestHexadecimal(t *testing.T) {
 }
 
 func TestHexadecimalWithWrongParam(t *testing.T) {
-	f := NewDefaultFaker()
-
 	defer func() {
 		if r := recover(); r == nil {
 			t.Error("Should panic with wrong digits parameter")

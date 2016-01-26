@@ -44,8 +44,9 @@ func (f Faker) StateAbbr() string {
 	return "StateAbbr"
 }
 
+// Country returns a country name
 func (f Faker) Country() string {
-	return "Country"
+	return anyFromSlice(f.CurrentLocale().CountryNames)
 }
 
 func (f Faker) CountryCode() string {

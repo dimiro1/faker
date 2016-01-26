@@ -3,6 +3,6 @@ package faker
 import "testing"
 
 func TestFakerAppVersion(t *testing.T) {
-	f := NewDefaultFaker()
+	f := NewDefault()
 	assertStringRegexp(t, "^\\d\\.\\d\\.\\d$", f.AppVersion())
 }

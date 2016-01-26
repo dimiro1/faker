@@ -14,8 +14,8 @@ const DefaultLocale = "en"
 // Faker is the main API
 // it also holds some config
 type Faker struct {
-	CurrentLocale string
-	Locales       map[string]locales.Locale
+	CurrentLocaleString string
+	Locales             map[string]locales.Locale
 }
 
 // Options is used to pass configuration options to Faker
@@ -24,12 +24,14 @@ type Options struct {
 	Seed   int64
 }
 
-// NewDefaultFaker creates a new Faker with default configuration
-func NewDefaultFaker() Faker {
-	f, err := NewFaker(Options{
-		Locale: DefaultLocale,
-		Seed:   time.Now().UTC().UnixNano(),
-	})
+// CurrentLocale returns the current locale object
+func (f Faker) CurrentLocale() locales.Locale {
+	return f.Locales[f.CurrentLocaleString]
+}
+
+// NewDefault creates a new Faker with default configuration
+func NewDefault() Faker {
+	f, err := NewForLocale(DefaultLocale)
 
 	if err != nil {
 		panic(fmt.Sprintf("NewDefaultFaker: NewFaker returned an error with valid options %+v\n", err))
@@ -38,8 +40,13 @@ func NewDefaultFaker() Faker {
 	return f
 }
 
-// NewFaker creates a new Faker with configuration passed in options
-func NewFaker(options Options) (Faker, error) {
+// NewForLocale creates a new Faker with the specified locale and random seed
+func NewForLocale(locale string) (Faker, error) {
+	return New(Options{Locale: locale, Seed: time.Now().UTC().UnixNano()})
+}
+
+// New creates a new Faker with configuration passed in options
+func New(options Options) (Faker, error) {
 
 	// Validate Locale
 	if !locales.IsValid(options.Locale) {
@@ -50,7 +57,7 @@ func NewFaker(options Options) (Faker, error) {
 	rand.Seed(options.Seed)
 
 	return Faker{
-		CurrentLocale: options.Locale,
-		Locales:       locales.Supported(),
+		CurrentLocaleString: options.Locale,
+		Locales:             locales.Supported(),
 	}, nil
 }

@@ -2,6 +2,7 @@ package locales
 
 // Locale is a struct that hold the common names from each lang
 type Locale struct {
+	Code         string
 	CountryNames []string
 	CityPrefix   []string
 	CitySuffix   []string
@@ -9,13 +10,8 @@ type Locale struct {
 
 // IsValid returns true if the given locale is a valid locale
 func IsValid(locale string) bool {
-	for k := range Supported() {
-		if k == locale {
-			return true
-		}
-	}
-
-	return false
+	_, ok := Supported()[locale]
+	return ok
 }
 
 // Supported returns a map of supported Locales
