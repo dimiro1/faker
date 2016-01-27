@@ -36,12 +36,14 @@ func (f Faker) CityPrefix() string {
 	return "CityPrefix"
 }
 
+// State returns a state name
 func (f Faker) State() string {
-	return "State"
+	return anyFromSlice(f.CurrentLocale().StateNames)
 }
 
+// StateAbbr returns a state abbrewviation
 func (f Faker) StateAbbr() string {
-	return "StateAbbr"
+	return anyFromSlice(f.CurrentLocale().StateAbbr)
 }
 
 // Country returns a country name

@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fake, _ := faker.NewForLocale("pt-br")
+	fake := faker.NewDefault()
 
 	fmt.Println(fake.Decimal(4, 5))
 	fmt.Println(fake.Digit())
@@ -17,5 +17,7 @@ func main() {
 	fmt.Println(fake.NumberBetween(10, 20))
 	fmt.Println(fake.PositiveNumber())
 	fmt.Println(fake.Country())
+	fmt.Println(fake.State())
+	fmt.Println(fake.StateAbbr())
 	fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }

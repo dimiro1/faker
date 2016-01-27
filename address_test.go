@@ -7,3 +7,15 @@ func TestFakerCountry(t *testing.T) {
 	country := f.Country()
 	assertElementInSlice(t, country, f.CurrentLocale().CountryNames)
 }
+
+func TestFakerState(t *testing.T) {
+	f := NewDefault()
+	state := f.State()
+	assertElementInSlice(t, state, f.CurrentLocale().StateNames)
+}
+
+func TestFakerStateAbbr(t *testing.T) {
+	f := NewDefault()
+	abbr := f.StateAbbr()
+	assertElementInSlice(t, abbr, f.CurrentLocale().StateAbbr)
+}

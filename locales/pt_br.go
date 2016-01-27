@@ -41,5 +41,7 @@ func pt_br_locale() Locale {
 			"Tokelau", "Tonga", "Trindade e Tobago", "Tunísia", "Turquemenistão", "Turquia", "Tuvalu", "Ucrânia",
 			"Uganda", "União Europeia", "Uruguai", "Usbequistão", "Vanuatu", "Vaticano", "Venezuela", "Vietname",
 			"Wake Island", "Wallis e Futuna", "West Bank", "Zâmbia", "Zimbabué"},
+		StateNames: []string{},
+		StateAbbr:  []string{},
 	}
 }
