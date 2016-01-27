@@ -6,7 +6,7 @@ import "fmt"
 // See: https://pt.wikipedia.org/wiki/Cadastro_Nacional_da_Pessoa_Jur%C3%ADdica
 func (f Faker) BrazilCNPJ() string {
 	v := [2]int{}
-	cnpj := sliceOfRandonNumbers(12)
+	cnpj := randomElements(12)
 	cnpj[8] = 0
 	cnpj[9] = 0
 	cnpj[10] = 0
@@ -49,7 +49,7 @@ func (f Faker) BrazilCNPJ() string {
 // See https://en.wikipedia.org/wiki/Cadastro_de_Pessoas_F%C3%ADsicas
 func (f Faker) BrazilCPF() string {
 	v := [2]int{}
-	cpf := sliceOfRandonNumbers(11)
+	cpf := randomElements(11)
 
 	// First Digit
 	for i := 1; i <= 9; i++ {

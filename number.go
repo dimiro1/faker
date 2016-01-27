@@ -13,7 +13,7 @@ func (f Faker) Decimal(len, places int) string {
 
 // Digit returns an positive int between 0 (inclusive) and 9 (inclusive)
 func (f Faker) Digit() int {
-	return digit()
+	return randomDigit()
 }
 
 // Hexadecimal returns a alpha numeric with digits length
@@ -24,21 +24,21 @@ func (f Faker) Hexadecimal(len int) string {
 
 // NegativeNumber returns an positive int between math.MinInt32 (inclusive) and -1 (inclusive)
 func (f Faker) NegativeNumber() int {
-	return numberBetween(math.MinInt32, -1)
+	return randomIntBetween(math.MinInt32, -1)
 }
 
 // Number returns a number with digits length
 // it will panic if len is less than 1
 func (f Faker) Number(len int) int {
-	return number(len)
+	return randomNumber(len)
 }
 
 // NumberBetween returns a random integer between first (inclusive) and second (inclusive)
 func (f Faker) NumberBetween(first, second int) int {
-	return numberBetween(first, second)
+	return randomIntBetween(first, second)
 }
 
 // PositiveNumber returns an positive int between 0 (inclusive) and math.MaxUint32 (inclusive)
 func (f Faker) PositiveNumber() int {
-	return numberBetween(0, math.MaxUint32)
+	return randomIntBetween(0, math.MaxUint32)
 }

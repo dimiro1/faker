@@ -1,5 +1,7 @@
 package faker
 
+import "fmt"
+
 func (f Faker) City() string {
 	return "City"
 }
@@ -38,27 +40,34 @@ func (f Faker) CityPrefix() string {
 
 // State returns a state name
 func (f Faker) State() string {
-	return anyFromSlice(f.CurrentLocale().StateNames)
+	return randomElement(f.CurrentLocale().StateNames)
 }
 
 // StateAbbr returns a state abbrewviation
 func (f Faker) StateAbbr() string {
-	return anyFromSlice(f.CurrentLocale().StateAbbr)
+	return randomElement(f.CurrentLocale().StateAbbr)
 }
 
 // Country returns a country name
 func (f Faker) Country() string {
-	return anyFromSlice(f.CurrentLocale().CountryNames)
+	return randomElement(f.CurrentLocale().CountryNames)
 }
 
+// CountryCode returns a ISO Country code
 func (f Faker) CountryCode() string {
-	return "CountryCode"
+	return randomElement(f.CurrentLocale().CountryCodes)
 }
 
+// Latitude returns an earth latitude
 func (f Faker) Latitude() string {
-	return "Latitude"
+	return fmt.Sprintf("%f", geoCordinate()/2)
 }
 
+// Longitude returns an earth longitude
 func (f Faker) Longitude() string {
-	return "Longitude"
+	return fmt.Sprintf("%f", geoCordinate())
+}
+
+func geoCordinate() float64 {
+	return randomFloatBetween(-180000000, 180000000) / 1000000.0
 }

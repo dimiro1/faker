@@ -1,10 +1,8 @@
 package faker
 
-import "math/rand"
-
 // Boolean returns a random true or false
 func (f Faker) Boolean() bool {
-	return rand.Float64() > 0.5
+	return randomBoolean()
 }
 
 // MD5 returns a random MD5 hexdigest
