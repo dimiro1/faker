@@ -13,3 +13,17 @@ func assertStringRegexp(t *testing.T, pattern, s string) {
 		t.Errorf("%s is not in format %s", s, pattern)
 	}
 }
+
+func assertElementInSlice(t *testing.T, s string, slice []string) {
+	found := false
+	for _, c := range slice {
+		if c == s {
+			found = true
+			break
+		}
+	}
+
+	if !found {
+		t.Error("Is not valid")
+	}
+}
