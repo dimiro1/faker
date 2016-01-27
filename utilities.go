@@ -9,16 +9,16 @@ import (
 )
 
 var (
-	zero       = []string{"0"}
-	noZero     = []string{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
-	hexletters = []string{"a", "b", "c", "d", "e", "f"}
-	letters    = []string{
+	zero      = []string{"0"}
+	oneToNine = []string{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+	atof      = []string{"a", "b", "c", "d", "e", "f"}
+	atoz      = []string{
 		"a", "b", "c", "d", "e", "f", "g", "h", "i",
 		"j", "k", "l", "m", "n", "o", "p", "q", "r",
 		"s", "t", "u", "v", "w", "x", "y", "z"}
-	numbers = append(zero, noZero...)
-	hex     = append(numbers, hexletters...)
-	alpha   = append(numbers, letters...)
+	zeroToNine = append(zero, oneToNine...)
+	hex        = append(zeroToNine, atof...)
+	alpha      = append(zeroToNine, atoz...)
 )
 
 func randomElement(s []string) string {
@@ -85,7 +85,7 @@ func randomElements(len int) []int {
 }
 
 func lexify(s string) string {
-	return randomReplaceAll("\\?", s, letters)
+	return randomReplaceAll("\\?", s, atoz)
 }
 
 func hexify(s string) string {
@@ -93,11 +93,11 @@ func hexify(s string) string {
 }
 
 func numerify(s string) string {
-	return randomReplaceAll("#", s, numbers)
+	return randomReplaceAll("#", s, zeroToNine)
 }
 
 func numerifyGreaterThanZero(s string) string {
-	return randomReplaceAll("@", s, noZero)
+	return randomReplaceAll("@", s, oneToNine)
 }
 
 func randomReplaceAll(sym, s string, slice []string) string {
