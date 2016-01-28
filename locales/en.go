@@ -1,5 +1,11 @@
 package locales
 
+/*
+ * RULES
+ * 1. The elements must be alphabetically ordered
+ * 2. Maximun of 120 chars per lines
+ */
+
 func en_locale() Locale {
 	return Locale{
 		Code:       "en",
