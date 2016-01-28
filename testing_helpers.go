@@ -24,6 +24,6 @@ func assertElementInSlice(t *testing.T, s string, slice []string) {
 	}
 
 	if !found {
-		t.Error("Is not valid")
+		t.Errorf("%s Is present on the list", s)
 	}
 }

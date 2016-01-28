@@ -11,7 +11,7 @@ func TestFakerCountry(t *testing.T) {
 func TestFakerCountryCode(t *testing.T) {
 	f := NewDefault()
 	code := f.CountryCode()
-	assertElementInSlice(t, code, f.CurrentLocale().CountryCodes)
+	assertElementInSlice(t, code, countryCodes)
 }
 
 func TestFakerState(t *testing.T) {

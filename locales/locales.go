@@ -4,7 +4,6 @@ package locales
 type Locale struct {
 	Code         string
 	CountryNames []string
-	CountryCodes []string
 	StateNames   []string
 	StateAbbr    []string
 	CityPrefix   []string

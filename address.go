@@ -55,7 +55,7 @@ func (f Faker) Country() string {
 
 // CountryCode returns a ISO Country code
 func (f Faker) CountryCode() string {
-	return randomElement(f.CurrentLocale().CountryCodes)
+	return randomElement(countryCodes)
 }
 
 // Latitude returns an earth latitude
