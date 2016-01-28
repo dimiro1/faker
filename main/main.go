@@ -19,5 +19,9 @@ func main() {
 	fmt.Println(fake.Country())
 	fmt.Println(fake.State())
 	fmt.Println(fake.StateAbbr())
+
+	fmt.Println(fake.ProgrammingLanguage())
+	fmt.Println(fake.OS())
+
 	fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }
