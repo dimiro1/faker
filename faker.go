@@ -15,7 +15,7 @@ const DefaultLocale = "en"
 // it also holds some config
 type Faker struct {
 	CurrentLocaleString string
-	Locales             map[string]locales.Locale
+	locales             map[string]locales.Locale
 }
 
 // Options is used to pass configuration options to Faker
@@ -26,7 +26,7 @@ type Options struct {
 
 // CurrentLocale returns the current locale object
 func (f Faker) CurrentLocale() locales.Locale {
-	return f.Locales[f.CurrentLocaleString]
+	return f.locales[f.CurrentLocaleString]
 }
 
 // NewDefault creates a new Faker with default configuration
@@ -58,6 +58,6 @@ func New(options Options) (Faker, error) {
 
 	return Faker{
 		CurrentLocaleString: options.Locale,
-		Locales:             locales.Supported(),
+		locales:             locales.Supported(),
 	}, nil
 }
