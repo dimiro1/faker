@@ -27,8 +27,9 @@ func (f Faker) Year() int {
 	return randomIntBetween(1500, 2100)
 }
 
+// Month returns a month between 1 and 12
 func (f Faker) Month() int {
-	return 3
+	return randomIntBetween(1, 12)
 }
 
 func (f Faker) DayOfWeek() int {
