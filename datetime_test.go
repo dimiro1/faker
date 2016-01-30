@@ -2,6 +2,12 @@ package faker
 
 import "testing"
 
+func TestFakerAMPM(t *testing.T) {
+	f := NewDefault()
+	l := f.AMPM()
+	assertElementInSlice(t, l, ampm)
+}
+
 func TestFakerYear(t *testing.T) {
 	for i := 0; i < 100; i++ {
 		n := f.Year()

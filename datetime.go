@@ -14,8 +14,9 @@ func (f Faker) DateTimeAfter(d time.Time) time.Time {
 	return time.Now()
 }
 
+// AMPM returns a string AM or PM
 func (f Faker) AMPM() string {
-	return "AM"
+	return randomElement(ampm)
 }
 
 func (f Faker) ISO8601() string {

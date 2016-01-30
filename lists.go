@@ -77,4 +77,8 @@ var (
 		"SlateGrey", "Snow", "SpringGreen", "SteelBlue", "Tan", "Teal", "Thistle", "Tomato", "Turquoise", "Violet",
 		"Wheat", "White", "WhiteSmoke", "Yellow", "YellowGreen",
 	}
+
+	ampm = []string{
+		"AM", "PM",
+	}
 )
