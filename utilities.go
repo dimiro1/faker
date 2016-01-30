@@ -85,6 +85,16 @@ func randomElements(len int) []int {
 	return nums
 }
 
+func format(s string) string {
+	s1 := lexify(s)
+	s1 = hexify(s1)
+	s1 = numerify(s1)
+	s1 = bothify(s1)
+	s1 = numerifyGreaterThanZero(s1)
+
+	return s1
+}
+
 func lexify(s string) string {
 	return randomReplaceAll("\\?", s, atoz)
 }

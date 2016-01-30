@@ -21,6 +21,11 @@ func TestFillString(t *testing.T) {
 	assertStringRegexp(t, "^[#]{10}$", s)
 }
 
+func TestFormat(t *testing.T) {
+	s := format("#@*?")
+	assertStringRegexp(t, "^\\d[1-9][\\da-f][a-z]$", s)
+}
+
 func TestNumerify(t *testing.T) {
 	s := numerify("###")
 	assertStringRegexp(t, "^\\d{3}$", s)

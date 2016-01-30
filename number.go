@@ -19,7 +19,7 @@ func (f Faker) Digit() int {
 // Hexadecimal returns a alpha numeric with digits length
 // it will panic if len is less than 1
 func (f Faker) Hexadecimal(len int) string {
-	return hexify(fillString("*", len))
+	return format(fillString("*", len))
 }
 
 // NegativeNumber returns an positive int between math.MinInt32 (inclusive) and -1 (inclusive)

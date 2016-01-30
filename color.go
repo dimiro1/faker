@@ -20,7 +20,7 @@ func (f Faker) CMYK() color.CMYK {
 
 // HexColor returns a hexadecimal color, including alpha
 func (f Faker) HexColor() string {
-	return hexify(fillString("*", 8))
+	return format(fillString("*", 8))
 }
 
 // RGBA returns a valid RGBA color
