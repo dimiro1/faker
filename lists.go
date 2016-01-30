@@ -23,7 +23,8 @@ var (
 		"MF", "PM", "VC", "WS", "SM", "ST", "SA", "SN", "RS", "SC", "SL", "SG", "SX", "SK", "SI", "SB", "SO",
 		"ZA", "GS", "SS", "ES", "LK", "SD", "SR", "SJ", "SZ", "SE", "CH", "SY", "TW", "TJ", "TZ", "TH", "TL",
 		"TG", "TK", "TO", "TT", "TN", "TR", "TM", "TC", "TV", "UG", "UA", "AE", "GB", "US", "UM", "UY", "UZ",
-		"VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW", "AX"}
+		"VU", "VE", "VN", "VG", "VI", "WF", "EH", "YE", "ZM", "ZW", "AX",
+	}
 
 	// Common used operating systems
 	operatingSystems = []string{
@@ -87,6 +88,7 @@ var (
 		"XVIII", "XIX", "XX", "XXI",
 	}
 
+	// See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 	timezones = []string{
 		"Africa/Abidjan", "Africa/Accra", "Africa/Addis_Ababa", "Africa/Algiers", "Africa/Asmara", "Africa/Asmera",
 		"Africa/Bamako", "Africa/Bangui", "Africa/Banjul", "Africa/Bissau", "Africa/Blantyre", "Africa/Brazzaville",
