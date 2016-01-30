@@ -22,8 +22,9 @@ func (f Faker) ISO8601() string {
 	return "ISO8601"
 }
 
+// Year returns a year between 1500 and 2100
 func (f Faker) Year() int {
-	return 2016
+	return randomIntBetween(1500, 2100)
 }
 
 func (f Faker) Month() int {
