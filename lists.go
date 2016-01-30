@@ -47,5 +47,12 @@ var (
 	}
 
 	// List of web frameworks
-	webFrameworks = []string{}
+	// See http://hotframeworks.com/
+	// See https://en.wikipedia.org/wiki/Comparison_of_web_frameworks
+	webFrameworks = []string{
+		"ASP.NET", "beego", "Bottle", "CakePHP", "CherryPy", "Dancer", "Django", "Express", "Flask", "Flex",
+		"FuelPHP", "Grails", "Grock", "GWT", "JSF", "Kohana", "Laravel", "Lift", "Merb", "Noir", "Padrino", "Play!",
+		"Pyramid", "Ramaze", "Revel", "Ruby on Rails", "Scalatra", "seaside", "Sinatra", "Spring", "Sympfony",
+		"Tapestry", "Tornado", "TurboGears", "Vaadin", "VRaptor", "web.py", "web2py", "Wicket", "Zend", "Zope",
+	}
 )
