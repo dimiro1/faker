@@ -2,12 +2,14 @@ package locales
 
 // Locale is a struct that hold the common names from each lang
 type Locale struct {
-	Code         string
-	CountryNames []string
-	StateNames   []string
-	StateAbbr    []string
+	Code string
+
+	AppNames     []string
 	CityPrefix   []string
 	CitySuffix   []string
+	CountryNames []string
+	StateAbbr    []string
+	StateNames   []string
 	Universities []string
 }
 
