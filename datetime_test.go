@@ -31,3 +31,13 @@ func TestFakerDayOfWeek(t *testing.T) {
 		}
 	}
 }
+
+func TestFakerDayOfMonth(t *testing.T) {
+	for i := 0; i < 100; i++ {
+		n := f.DayOfMonth()
+		if n < 1 || n > 31 {
+			t.Errorf("DayOfMonth must return numbers from 1 inclusive to 31 inclusive: %d", n)
+			return
+		}
+	}
+}

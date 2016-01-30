@@ -37,8 +37,9 @@ func (f Faker) DayOfWeek() int {
 	return randomIntBetween(1, 7)
 }
 
+// DayOfMonth returns a day of the month between 1 and 31
 func (f Faker) DayOfMonth() int {
-	return 20
+	return randomIntBetween(1, 31)
 }
 
 func (f Faker) Century() string {
