@@ -21,3 +21,13 @@ func TestFakerMonth(t *testing.T) {
 		}
 	}
 }
+
+func TestFakerDayOfWeek(t *testing.T) {
+	for i := 0; i < 100; i++ {
+		n := f.DayOfWeek()
+		if n < 1 || n > 7 {
+			t.Errorf("DayOfWeek must return numbers from 1 inclusive to 7 inclusive: %d", n)
+			return
+		}
+	}
+}

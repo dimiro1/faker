@@ -32,8 +32,9 @@ func (f Faker) Month() int {
 	return randomIntBetween(1, 12)
 }
 
+// DayOfWeek returns a day of week between 1 and 7 where 1 is sunday
 func (f Faker) DayOfWeek() int {
-	return 1
+	return randomIntBetween(1, 7)
 }
 
 func (f Faker) DayOfMonth() int {
