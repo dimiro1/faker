@@ -8,6 +8,7 @@ type Locale struct {
 	StateAbbr    []string
 	CityPrefix   []string
 	CitySuffix   []string
+	Universities []string
 }
 
 // IsValid returns true if the given locale is a valid locale

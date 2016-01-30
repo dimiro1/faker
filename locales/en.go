@@ -59,5 +59,19 @@ func en_locale() Locale {
 		StateAbbr: []string{"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "FL", "GA", "HI", "ID", "IL", "IN", "IA",
 			"KS", "KY", "LA", "ME", "MD", "MA", "MI", "MN", "MS", "MO", "MT", "NE", "NV", "NH", "NJ", "NM", "NY", "NC",
 			"ND", "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY"},
+
+		// See http://www.forbes.com/top-colleges/list/2/#tab:rank
+		Universities: []string{
+			"Pomona College", "Williams College", "Stanford University", "Princeton University", "Yale University",
+			"Harvard University", "Swarthmore College", "Brown University", "Amherst College",
+			"Massachusetts Institute of Technology", "United States Military Academy", "University of Pennsylvania",
+			"University of Notre Dame", "Dartmouth College", "Columbia University", "Northwestern University",
+			"Wesleyan University", "Claremont McKenna College", "Haverford College", "University of Chicago",
+			"Bowdoin College", "Duke University", "Georgetown University", "Tufts University", "Cornell University",
+			"Wellesley College", "United States Naval Academy", "Vassar College", "Washington and Lee University",
+			"Carleton College", "Davidson College", "Rice University", "California Institute of Technology",
+			"Middlebury College", "University of California, Berkeley", "University of Virginia", "Boston College",
+			"United States Air Force Academy", "College of William & Mary", "Colgate University",
+		},
 	}
 }
