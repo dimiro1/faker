@@ -43,8 +43,9 @@ func (f Faker) DayOfMonth() int {
 	return randomIntBetween(1, 31)
 }
 
+// Century returns a century from I to XXI
 func (f Faker) Century() string {
-	return "XX"
+	return randomElement(centuries)
 }
 
 func (f Faker) TimeZone() string {

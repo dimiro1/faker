@@ -8,6 +8,12 @@ func TestFakerAMPM(t *testing.T) {
 	assertElementInSlice(t, l, ampm)
 }
 
+func TestFakerCentury(t *testing.T) {
+	f := NewDefault()
+	l := f.Century()
+	assertElementInSlice(t, l, centuries)
+}
+
 func TestFakerYear(t *testing.T) {
 	for i := 0; i < 100; i++ {
 		n := f.Year()
