@@ -53,3 +53,9 @@ func TestFakerDayOfMonth(t *testing.T) {
 		}
 	}
 }
+
+func TestFakerTimeZone(t *testing.T) {
+	f := NewDefault()
+	l := f.TimeZone()
+	assertElementInSlice(t, l, timezones)
+}

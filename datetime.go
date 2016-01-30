@@ -48,6 +48,7 @@ func (f Faker) Century() string {
 	return randomElement(centuries)
 }
 
+// TimeZone returns TZ name
 func (f Faker) TimeZone() string {
-	return "America/Sao_Paulo"
+	return randomElement(timezones)
 }
