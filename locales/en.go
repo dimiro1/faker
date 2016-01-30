@@ -62,16 +62,17 @@ func en_locale() Locale {
 
 		// See http://www.forbes.com/top-colleges/list/2/#tab:rank
 		Universities: []string{
-			"Pomona College", "Williams College", "Stanford University", "Princeton University", "Yale University",
-			"Harvard University", "Swarthmore College", "Brown University", "Amherst College",
-			"Massachusetts Institute of Technology", "United States Military Academy", "University of Pennsylvania",
-			"University of Notre Dame", "Dartmouth College", "Columbia University", "Northwestern University",
-			"Wesleyan University", "Claremont McKenna College", "Haverford College", "University of Chicago",
-			"Bowdoin College", "Duke University", "Georgetown University", "Tufts University", "Cornell University",
-			"Wellesley College", "United States Naval Academy", "Vassar College", "Washington and Lee University",
-			"Carleton College", "Davidson College", "Rice University", "California Institute of Technology",
-			"Middlebury College", "University of California, Berkeley", "University of Virginia", "Boston College",
-			"United States Air Force Academy", "College of William & Mary", "Colgate University",
+			"Amherst College", "Boston College", "Bowdoin College", "Brown University",
+			"California Institute of Technology", "Carleton College", "Claremont McKenna College",
+			"Colgate University", "College of William & Mary", "Columbia University", "Cornell University",
+			"Dartmouth College", "Davidson College", "Duke University", "Georgetown University", "Harvard University",
+			"Haverford College", "Massachusetts Institute of Technology", "Middlebury College",
+			"Northwestern University", "Pomona College", "Princeton University", "Rice University",
+			"Stanford University", "Swarthmore College", "Tufts University", "United States Air Force Academy",
+			"United States Military Academy", "United States Naval Academy", "University of California, Berkeley",
+			"University of Chicago", "University of Notre Dame", "University of Pennsylvania", "University of Virginia",
+			"Vassar College", "Washington and Lee University", "Wellesley College", "Wesleyan University",
+			"Williams College", "Yale University",
 		},
 	}
 }
