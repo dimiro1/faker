@@ -6,8 +6,9 @@ func (f Faker) HexColor() string {
 	return "HexColor"
 }
 
+// ColorName returns a name of a ColorName
 func (f Faker) ColorName() string {
-	return "ColorName"
+	return randomElement(colorNames)
 }
 
 func (f Faker) RGBA() color.RGBA {
