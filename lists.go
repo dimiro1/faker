@@ -7,6 +7,18 @@ package faker
  */
 
 var (
+	zero      = []string{"0"}
+	oneToNine = []string{"1", "2", "3", "4", "5", "6", "7", "8", "9"}
+	atof      = []string{"a", "b", "c", "d", "e", "f"}
+	atoz      = []string{
+		"a", "b", "c", "d", "e", "f", "g", "h", "i",
+		"j", "k", "l", "m", "n", "o", "p", "q", "r",
+		"s", "t", "u", "v", "w", "x", "y", "z",
+	}
+	zeroToNine = append(zero, oneToNine...)
+	hex        = append(zeroToNine, atof...)
+	alpha      = append(zeroToNine, atoz...)
+
 	// countryCodes is an intertational ISO code, this list should not be in locales.
 	countryCodes = []string{
 		"AF", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH",
