@@ -1,8 +1,8 @@
 package faker
 
 type ImageOptions struct {
-	Size   string
-	Format string
+	Size   string `default:"300x300"`
+	Format string `default:"jpg"`
 }
 
 func (f Faker) AvatarImage() string {

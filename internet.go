@@ -6,23 +6,23 @@ type EmailOptions struct {
 
 type UserNameOptions struct {
 	Name string
-	Sep  string
+	Sep  string `default:"-"`
 }
 
 type PassWordOptions struct {
-	Length int
-	Alpha  bool
+	Length int  `default:"8"`
+	Alpha  bool `default:"true"`
 }
 
 type URLOptions struct {
-	Protocol string
-	Domain   string
-	Path     string
+	Protocol string `default:"http"`
+	Domain   string `default:"example.com"`
+	Path     string `default:"/"`
 }
 
 type SlugOptions struct {
 	Value string
-	Sep   string
+	Sep   string `default:"-"`
 }
 
 func (f Faker) Email() string {
