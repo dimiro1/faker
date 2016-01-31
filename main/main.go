@@ -23,6 +23,7 @@ func main() {
 	fmt.Println(fake.ProgrammingLanguage())
 	fmt.Println(fake.OS())
 	fmt.Println(fake.EAN13())
+	fmt.Println(fake.PhoneNumber())
 
 	fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }
