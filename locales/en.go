@@ -122,6 +122,16 @@ func en_locale() Locale {
 			"917", "918", "919", "920", "925", "928", "931", "936", "937", "940", "941", "947", "949", "952", "954",
 			"956", "959", "970", "971", "972", "973", "975", "978", "979", "980", "984", "985", "989",
 		},
+
+		// See https://github.com/joke2k/faker/blob/master/faker/providers/phone_number/en_US/__init__.py
+		PhoneNumbers: []string{
+			"+##(#)##########", "+##(#)##########", "0##########", "0##########", "###-###-####", "(###)###-####",
+			"1-###-###-####", "###.###.####", "###-###-####", "(###)###-####", "1-###-###-####", "###.###.####",
+			"###-###-####x###", "(###)###-####x###", "1-###-###-####x###", "###.###.####x###", "###-###-####x####",
+			"(###)###-####x####", "1-###-###-####x####", "###.###.####x####", "###-###-####x#####",
+			"(###)###-####x#####", "1-###-###-####x#####", "###.###.####x#####",
+		},
+
 		StateNames: []string{"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
 			"Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky",
 			"Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
