@@ -11,6 +11,7 @@ func pt_br_locale() Locale {
 		Code: "pt-br",
 
 		AppNames:   []string{},
+		AreaCodes:  []string{},
 		CityPrefix: []string{"Nova", "Velha", "Grande", "Vila", "Município de"},
 		CitySuffix: []string{"do Descoberto", "de Nossa Senhora", "do Norte", "do Sul"},
 		CountryNames: []string{
@@ -49,8 +50,9 @@ func pt_br_locale() Locale {
 			"Tokelau", "Tonga", "Trindade e Tobago", "Tunísia", "Turquemenistão", "Turquia", "Tuvalu", "Ucrânia",
 			"Uganda", "União Europeia", "Uruguai", "Usbequistão", "Vanuatu", "Vaticano", "Venezuela", "Vietname",
 			"Wake Island", "Wallis e Futuna", "West Bank", "Zâmbia", "Zimbabué"},
-		StateNames: []string{},
-		StateAbbr:  []string{},
+		ExchangeCodes: []string{},
+		StateNames:    []string{},
+		StateAbbr:     []string{},
 
 		// See https://pt.wikipedia.org/wiki/Lista_de_universidades_do_Brasil
 		Universities: []string{

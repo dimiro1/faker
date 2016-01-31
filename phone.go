@@ -8,10 +8,12 @@ func (f Faker) CellPhoneNumber() string {
 	return "(11) 98161-0983"
 }
 
+// PhoneAreaCode returns an area code
 func (f Faker) PhoneAreaCode() string {
-	return "11"
+	return randomElement(f.CurrentLocale().AreaCodes)
 }
 
+// PhoneExchangeCode returns an exchange code
 func (f Faker) PhoneExchangeCode() string {
-	return "55"
+	return randomElement(f.CurrentLocale().ExchangeCodes)
 }
