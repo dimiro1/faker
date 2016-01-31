@@ -50,6 +50,8 @@ func en_locale() Locale {
 		CitySuffix: []string{
 			"town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt",
 			"chester", "mouth", "fort", "haven", "side", "shire"},
+
+		// See http://www.infoplease.com/ipa/A0108477.html
 		CityNames: []string{
 			"Albuquerque", "Arlington", "Atlanta", "Austin", "Baltimore", "Boston", "Charlotte", "Chicago", "Cleveland",
 			"Colorado Springs", "Columbus", "Dallas", "Denver", "Detroit", "El Paso", "Fort Worth", "Fresno", "Honolulu",
