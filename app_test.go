@@ -10,5 +10,5 @@ func TestFakerAppName(t *testing.T) {
 
 func TestFakerAppVersion(t *testing.T) {
 	f := NewDefault()
-	assertStringRegexp(t, "^\\d\\.\\d\\.\\d$", f.AppVersion())
+	assertStringRegexp(t, "^\\d\\.\\d(\\.\\d)?(-(alpha|beta|rc1|rc2|release))?$", f.AppVersion())
 }

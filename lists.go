@@ -19,6 +19,22 @@ var (
 	hex        = append(zeroToNine, atof...)
 	alpha      = append(zeroToNine, atoz...)
 
+	appVersion = []string{
+		"#.#",
+		"#.#-alpha",
+		"#.#-beta",
+		"#.#-rc1",
+		"#.#-rc2",
+		"#.#-release",
+
+		"#.#.#",
+		"#.#.#-alpha",
+		"#.#.#-beta",
+		"#.#.#-rc1",
+		"#.#.#-rc2",
+		"#.#.#-release",
+	}
+
 	// countryCodes is an intertational ISO code, this list should not be in locales.
 	countryCodes = []string{
 		"AF", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH",
