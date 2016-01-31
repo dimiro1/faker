@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dimiro1/faker.svg?branch=master)](https://travis-ci.org/dimiro1/faker)
+
 # faker
 A package that generates fake data for GO
 
