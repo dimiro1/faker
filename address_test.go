@@ -2,6 +2,12 @@ package faker
 
 import "testing"
 
+func TestFakerCity(t *testing.T) {
+	f := NewDefault()
+	city := f.City()
+	assertElementInSlice(t, city, f.CurrentLocale().CityNames)
+}
+
 func TestFakerCountry(t *testing.T) {
 	f := NewDefault()
 	country := f.Country()

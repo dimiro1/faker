@@ -2,8 +2,9 @@ package faker
 
 import "fmt"
 
+// City returns a city name
 func (f Faker) City() string {
-	return "City"
+	return randomElement(f.CurrentLocale().CityNames)
 }
 
 func (f Faker) StreetName() string {

@@ -14,6 +14,7 @@ func pt_br_locale() Locale {
 		AreaCodes:  []string{},
 		CityPrefix: []string{"Nova", "Velha", "Grande", "Vila", "Município de"},
 		CitySuffix: []string{"do Descoberto", "de Nossa Senhora", "do Norte", "do Sul"},
+		CityNames:  []string{},
 		CountryNames: []string{
 			"Afeganistão", "África do Sul", "Akrotiri", "Albânia", "Alemanha", "Andorra", "Angola", "Anguila",
 			"Antárctida", "Antígua e Barbuda", "Antilhas Neerlandesas", "Arábia Saudita", "Arctic Ocean", "Argélia",

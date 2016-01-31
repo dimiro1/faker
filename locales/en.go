@@ -47,7 +47,18 @@ func en_locale() Locale {
 			"956", "959", "970", "971", "972", "973", "975", "978", "979", "980", "984", "985", "989",
 		},
 		CityPrefix: []string{"North", "East", "West", "South", "New", "Lake", "Port"},
-		CitySuffix: []string{"town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt", "chester", "mouth", "fort", "haven", "side", "shire"},
+		CitySuffix: []string{
+			"town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt",
+			"chester", "mouth", "fort", "haven", "side", "shire"},
+		CityNames: []string{
+			"Albuquerque", "Arlington", "Atlanta", "Austin", "Baltimore", "Boston", "Charlotte", "Chicago", "Cleveland",
+			"Colorado Springs", "Columbus", "Dallas", "Denver", "Detroit", "El Paso", "Fort Worth", "Fresno", "Honolulu",
+			"Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Long Beach", "Los Angeles",
+			"Louisville/Jefferson County", "Memphis", "Mesa", "Miami", "Milwaukee", "Minneapolis", "Nashville-Davidson",
+			"New Orleans", "New York", "Oakland", "Oklahoma City", "Omaha", "Philadelphia", "Phoenix", "Portland",
+			"Raleigh", "Sacramento", "St. Louis", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle",
+			"Tucson", "Tulsa", "Virginia Beach", "Washington", "Wichita",
+		},
 		CountryNames: []string{
 			"Afghanistan", "Akrotiri", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla",
 			"Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands",

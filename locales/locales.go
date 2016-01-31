@@ -8,6 +8,7 @@ type Locale struct {
 	AreaCodes     []string
 	CityPrefix    []string
 	CitySuffix    []string
+	CityNames     []string
 	CountryNames  []string
 	ExchangeCodes []string
 	StateAbbr     []string
