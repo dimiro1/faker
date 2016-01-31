@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"reflect"
 	"strconv"
+	"strings"
 )
 
 // Apply apply the defaults values defined in the field tags.
@@ -45,7 +46,7 @@ func Apply(val interface{}) error {
 		tag := value.Type().Field(i).Tag.Get(defaultTagName)
 
 		// Continue if the current field is not annotated
-		if tag == "" {
+		if len(strings.TrimSpace(tag)) == 0 {
 			continue
 		}
 
