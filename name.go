@@ -4,8 +4,9 @@ func (f Faker) Name() string {
 	return "Claudemiro"
 }
 
+// FirstName returns a Male or Female first name
 func (f Faker) FirstName() string {
-	return "Claudemiro"
+	return randomElement(f.CurrentLocale().FirstNames)
 }
 
 func (f Faker) LastName() string {
@@ -22,4 +23,9 @@ func (f Faker) Suffix() string {
 
 func (f Faker) Title() string {
 	return "Legacy Creative Director"
+}
+
+// Gender returns a gender name
+func (f Faker) Gender() string {
+	return randomElement(f.CurrentLocale().Gender)
 }

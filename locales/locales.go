@@ -11,6 +11,8 @@ type Locale struct {
 	CitySuffix    []string
 	CountryNames  []string
 	ExchangeCodes []string
+	FirstNames    []string
+	Gender        []string
 	PhoneNumbers  []string
 	StateAbbr     []string
 	StateNames    []string

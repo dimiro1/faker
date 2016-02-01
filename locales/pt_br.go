@@ -69,6 +69,10 @@ func pt_br_locale() Locale {
 			"Uganda", "União Europeia", "Uruguai", "Usbequistão", "Vanuatu", "Vaticano", "Venezuela", "Vietname",
 			"Wake Island", "Wallis e Futuna", "West Bank", "Zâmbia", "Zimbabué"},
 		ExchangeCodes: []string{},
+		FirstNames:    []string{},
+		Gender: []string{
+			"Masculino", "Feminino",
+		},
 		PhoneNumbers: []string{
 			"+55 (011) #### ####", "+55 (021) #### ####", "+55 (031) #### ####", "+55 (041) #### ####",
 			"+55 (051) #### ####", "+55 (061) #### ####", "+55 (071) #### ####", "+55 (081) #### ####",
