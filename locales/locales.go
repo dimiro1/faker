@@ -6,15 +6,15 @@ type Locale struct {
 
 	AppNames      []string
 	AreaCodes     []string
+	CityNames     []string
 	CityPrefix    []string
 	CitySuffix    []string
-	CityNames     []string
 	CountryNames  []string
 	ExchangeCodes []string
+	PhoneNumbers  []string
 	StateAbbr     []string
 	StateNames    []string
 	Universities  []string
-	PhoneNumbers  []string
 }
 
 // IsValid returns true if the given locale is a valid locale
