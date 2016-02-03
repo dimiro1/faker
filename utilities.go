@@ -6,6 +6,7 @@ import (
 	"math/rand"
 	"regexp"
 	"strconv"
+	gotemplate "text/template"
 )
 
 // randomElement select a random element from a array
@@ -118,4 +119,17 @@ func randomReplaceAll(sym, s string, slice []string) string {
 	return r.ReplaceAllStringFunc(s, func(original string) string {
 		return randomElement(slice)
 	})
+}
+
+func template(str string, data interface{}) (string, error) {
+	buffer := new(bytes.Buffer)
+
+	t := gotemplate.Must(gotemplate.New("template").Parse(str))
+	err := t.Execute(buffer, data)
+
+	if err != nil {
+		return "", err
+	}
+
+	return buffer.String(), nil
 }
