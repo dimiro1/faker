@@ -47,13 +47,9 @@ func TestHexify(t *testing.T) {
 }
 
 func TestTemplate(t *testing.T) {
-	s, err := template("test-template", `Hello {{ .Name }}`, struct {
+	s := template("test-template", `Hello {{ .Name }}`, struct {
 		Name string
 	}{Name: "Claudemiro"})
-
-	if err != nil {
-		t.Error("Should not return error")
-	}
 
 	if s != "Hello Claudemiro" {
 		t.Errorf("The result is different '%s'", s)

@@ -883,6 +883,10 @@ func en_locale() Locale {
 			"Male", "Female",
 		},
 
+		Names: []string{
+			"{{ .FirstName }}",
+		},
+
 		// See https://github.com/joke2k/faker/blob/master/faker/providers/phone_number/en_US/__init__.py
 		PhoneNumbers: []string{
 			"+##(#)##########", "+##(#)##########", "0##########", "0##########", "###-###-####", "(###)###-####",

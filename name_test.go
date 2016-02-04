@@ -2,6 +2,15 @@ package faker
 
 import "testing"
 
+func TestFakerName(t *testing.T) {
+	f := NewDefault()
+	p := f.Name()
+
+	if len(p) == 0 {
+		t.Error("Should return a full name")
+	}
+}
+
 func TestFakerFirstName(t *testing.T) {
 	f := NewDefault()
 	name := f.FirstName()

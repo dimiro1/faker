@@ -121,15 +121,15 @@ func randomReplaceAll(sym, s string, slice []string) string {
 	})
 }
 
-func template(name, str string, data interface{}) (string, error) {
+func template(name, str string, data interface{}) string {
 	buffer := new(bytes.Buffer)
 
 	t := gotemplate.Must(gotemplate.New(name).Parse(str))
 	err := t.Execute(buffer, data)
 
 	if err != nil {
-		return "", err
+		panic("template: Must compile and execute template")
 	}
 
-	return buffer.String(), nil
+	return buffer.String()
 }

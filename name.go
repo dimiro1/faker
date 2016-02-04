@@ -1,7 +1,8 @@
 package faker
 
+// Name returns a Male or Female full name
 func (f Faker) Name() string {
-	return "Claudemiro"
+	return template("Name", randomElement(f.CurrentLocale().Names), f)
 }
 
 // FirstName returns a Male or Female first name
