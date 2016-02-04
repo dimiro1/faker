@@ -47,7 +47,7 @@ func TestHexify(t *testing.T) {
 }
 
 func TestTemplate(t *testing.T) {
-	s, err := template(`Hello {{ .Name }}`, struct {
+	s, err := template("test-template", `Hello {{ .Name }}`, struct {
 		Name string
 	}{Name: "Claudemiro"})
 

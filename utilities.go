@@ -121,10 +121,10 @@ func randomReplaceAll(sym, s string, slice []string) string {
 	})
 }
 
-func template(str string, data interface{}) (string, error) {
+func template(name, str string, data interface{}) (string, error) {
 	buffer := new(bytes.Buffer)
 
-	t := gotemplate.Must(gotemplate.New("template").Parse(str))
+	t := gotemplate.Must(gotemplate.New(name).Parse(str))
 	err := t.Execute(buffer, data)
 
 	if err != nil {
