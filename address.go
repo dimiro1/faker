@@ -23,12 +23,9 @@ func (f Faker) BuildingNumber() string {
 	return "BuildingNumber"
 }
 
+// ZipCode must return a zip code
 func (f Faker) ZipCode() string {
-	return "ZipCode"
-}
-
-func (f Faker) Zip() string {
-	return "Zip"
+	return randomElement(f.CurrentLocale().Zip)
 }
 
 func (f Faker) StreetSuffix() string {

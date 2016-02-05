@@ -1017,5 +1017,9 @@ func en_locale() Locale {
 			"Vassar College", "Washington and Lee University", "Wellesley College", "Wesleyan University",
 			"Williams College", "Yale University",
 		},
+
+		Zip: []string{
+			"#####",
+		},
 	}
 }

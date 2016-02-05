@@ -211,5 +211,9 @@ func pt_br_locale() Locale {
 			"Universidade Vale do Rio Verde (UNINCOR)", "Universidade Veiga de Almeida (UVA)",
 			"Universidade Vila Velha (UVV)", "Univesidade do Alto Vale do Rio do Pixe (UNIARP)",
 		},
+
+		Zip: []string{
+			"#####-###",
+		},
 	}
 }

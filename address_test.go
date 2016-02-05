@@ -41,3 +41,12 @@ func TestFakerLongitude(t *testing.T) {
 	f := NewDefault()
 	assertStringRegexp(t, "^(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))$", f.Longitude())
 }
+
+func TestFakerZipCode(t *testing.T) {
+	f := NewDefault()
+	p := f.ZipCode()
+
+	if len(p) == 0 {
+		t.Error("Should return a zip code")
+	}
+}

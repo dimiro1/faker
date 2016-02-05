@@ -19,6 +19,7 @@ type Locale struct {
 	StateAbbr     []string
 	StateNames    []string
 	Universities  []string
+	Zip           []string
 }
 
 // IsValid returns true if the given locale is a valid locale
