@@ -10,8 +10,9 @@ func (f Faker) FirstName() string {
 	return randomElement(f.CurrentLocale().FirstNames)
 }
 
+// LastName returns a Male or Female last name
 func (f Faker) LastName() string {
-	return "Neto"
+	return randomElement(f.CurrentLocale().LastName)
 }
 
 func (f Faker) Prefix() string {

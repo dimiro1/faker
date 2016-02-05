@@ -13,6 +13,7 @@ type Locale struct {
 	ExchangeCodes []string
 	FirstNames    []string
 	Gender        []string
+	LastName      []string
 	Names         []string
 	PhoneNumbers  []string
 	StateAbbr     []string

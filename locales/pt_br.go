@@ -73,6 +73,7 @@ func pt_br_locale() Locale {
 		Gender: []string{
 			"Masculino", "Feminino",
 		},
+		LastName: []string{},
 		Names: []string{
 			"{{ .FirstName }}",
 		},

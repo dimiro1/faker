@@ -22,3 +22,9 @@ func TestFakerGender(t *testing.T) {
 	g := f.Gender()
 	assertElementInSlice(t, g, f.CurrentLocale().Gender)
 }
+
+func TestFakerLastName(t *testing.T) {
+	f := NewDefault()
+	name := f.LastName()
+	assertElementInSlice(t, name, f.CurrentLocale().LastName)
+}
