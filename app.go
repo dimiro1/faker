@@ -10,6 +10,7 @@ func (f Faker) AppVersion() string {
 	return format(randomElement(appVersion))
 }
 
+// AppAuthor returns a Author Name
 func (f Faker) AppAuthor() string {
-	return "John Doe"
+	return f.Name()
 }
