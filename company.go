@@ -1,11 +1,13 @@
 package faker
 
+// CompanyName returns a company name
 func (f Faker) CompanyName() string {
-	return "CompanyName"
+	return template("CompanyName", randomElement(f.CurrentLocale().CompanyNames), f)
 }
 
+// CompanySuffix returns a company suffix such as 'corp', 'LLC'
 func (f Faker) CompanySuffix() string {
-	return "CompanySuffix"
+	return randomElement(f.CurrentLocale().CompanySuffixes)
 }
 
 func (f Faker) CompanyCatchPhrase() string {

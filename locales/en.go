@@ -61,6 +61,18 @@ func en_locale() Locale {
 			"Raleigh", "Sacramento", "St. Louis", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle",
 			"Tucson", "Tulsa", "Virginia Beach", "Washington", "Wichita",
 		},
+
+		CompanyNames: []string{
+			"{{ .LastName }} {{ .CompanySuffix }}",
+			"{{ .LastName }}-{{ .LastName }}",
+			"{{ .LastName }} & {{ .LastName }}",
+			"{{ .LastName }} {{ .LastName }} and {{ .LastName }}",
+		},
+
+		CompanySuffixes: []string{
+			"Inc", "and Sons", "LLC", "Group", "PLC", "Ltd",
+		},
+
 		CountryNames: []string{
 			"Afghanistan", "Akrotiri", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla",
 			"Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Ashmore and Cartier Islands",

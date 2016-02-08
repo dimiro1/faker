@@ -4,22 +4,24 @@ package locales
 type Locale struct {
 	Code string
 
-	AppNames      []string
-	AreaCodes     []string
-	CityNames     []string
-	CityPrefix    []string
-	CitySuffix    []string
-	CountryNames  []string
-	ExchangeCodes []string
-	FirstNames    []string
-	Gender        []string
-	LastName      []string
-	Names         []string
-	PhoneNumbers  []string
-	StateAbbr     []string
-	StateNames    []string
-	Universities  []string
-	Zip           []string
+	AppNames        []string
+	AreaCodes       []string
+	CityNames       []string
+	CityPrefix      []string
+	CitySuffix      []string
+	CompanyNames    []string
+	CompanySuffixes []string
+	CountryNames    []string
+	ExchangeCodes   []string
+	FirstNames      []string
+	Gender          []string
+	LastName        []string
+	Names           []string
+	PhoneNumbers    []string
+	StateAbbr       []string
+	StateNames      []string
+	Universities    []string
+	Zip             []string
 }
 
 // IsValid returns true if the given locale is a valid locale

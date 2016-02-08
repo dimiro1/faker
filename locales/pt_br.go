@@ -32,6 +32,17 @@ func pt_br_locale() Locale {
 			"Santarém", "Praia Grande", "São José dos Pinhais", "Mossoró", "Suzano", "Camaçari", "Governador Valadares",
 			"Santa Maria", "Gravataí", "Taboão da Serra", "Foz do Iguaçu", "Várzea Grande",
 		},
+		CompanyNames: []string{
+			"{{ .LastName }} {{ .CompanySuffix }}",
+			"{{ .LastName }}-{{ .LastName }}",
+			"{{ .LastName }} & {{ .LastName }}",
+			"{{ .LastName }} {{ .LastName }} e {{ .LastName }}",
+		},
+
+		CompanySuffixes: []string{
+			"LTDA", "S/A", "e filhos", "e netos",
+		},
+
 		CountryNames: []string{
 			"Afeganistão", "África do Sul", "Akrotiri", "Albânia", "Alemanha", "Andorra", "Angola", "Anguila",
 			"Antárctida", "Antígua e Barbuda", "Antilhas Neerlandesas", "Arábia Saudita", "Arctic Ocean", "Argélia",
