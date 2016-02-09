@@ -1015,6 +1015,14 @@ func en_locale() Locale {
 			"OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
 		},
 
+		StreetNames: []string{
+			"{{ .LastName }} {{ .StreetSuffix }}",
+		},
+
+		StreetSuffixes: []string{
+			"Street",
+		},
+
 		// See http://www.forbes.com/top-colleges/list/2/#tab:rank
 		Universities: []string{
 			"Amherst College", "Boston College", "Bowdoin College", "Brown University",

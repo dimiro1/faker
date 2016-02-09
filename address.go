@@ -7,8 +7,9 @@ func (f Faker) City() string {
 	return randomElement(f.CurrentLocale().CityNames)
 }
 
+// StreetName return a street name
 func (f Faker) StreetName() string {
-	return "StreetName"
+	return template("StreetName", randomElement(f.CurrentLocale().StreetNames), f)
 }
 
 func (f Faker) StreetAddress() string {
@@ -28,8 +29,9 @@ func (f Faker) ZipCode() string {
 	return randomElement(f.CurrentLocale().Zip)
 }
 
+// StreetSuffix return a Street Suffix
 func (f Faker) StreetSuffix() string {
-	return "StreetSuffix"
+	return randomElement(f.CurrentLocale().StreetSuffixes)
 }
 
 func (f Faker) CityPrefix() string {

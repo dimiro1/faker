@@ -106,6 +106,9 @@ func pt_br_locale() Locale {
 		StateNames: []string{},
 		StateAbbr:  []string{},
 
+		StreetNames:    []string{},
+		StreetSuffixes: []string{},
+
 		// See https://pt.wikipedia.org/wiki/Lista_de_universidades_do_Brasil
 		Universities: []string{
 			"Centro Universitário da Grande Dourados (UNIGRAN)", "Centro Universitário de Belo Horizonte (UniBH)",

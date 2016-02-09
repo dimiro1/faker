@@ -20,6 +20,8 @@ type Locale struct {
 	PhoneNumbers    []string
 	StateAbbr       []string
 	StateNames      []string
+	StreetNames     []string
+	StreetSuffixes  []string
 	Universities    []string
 	Zip             []string
 }
