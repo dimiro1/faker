@@ -46,6 +46,11 @@ func en_locale() Locale {
 			"917", "918", "919", "920", "925", "928", "931", "936", "937", "940", "941", "947", "949", "952", "954",
 			"956", "959", "970", "971", "972", "973", "975", "978", "979", "980", "984", "985", "989",
 		},
+
+		BuildingNumbers: []string{
+			"@", "@#", "@##",
+		},
+
 		CityPrefix: []string{"North", "East", "West", "South", "New", "Lake", "Port"},
 		CitySuffix: []string{
 			"town", "ton", "land", "ville", "berg", "burgh", "borough", "bury", "view", "port", "mouth", "stad", "furt",
@@ -1007,6 +1012,10 @@ func en_locale() Locale {
 			"Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio",
 			"Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee",
 			"Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
+		},
+
+		StreetAddress: []string{
+			"{{ .BuildingNumber }} {{ .StreetName }}",
 		},
 
 		StateAbbr: []string{

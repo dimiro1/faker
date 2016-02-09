@@ -6,6 +6,7 @@ type Locale struct {
 
 	AppNames        []string
 	AreaCodes       []string
+	BuildingNumbers []string
 	CityNames       []string
 	CityPrefix      []string
 	CitySuffix      []string
@@ -20,6 +21,7 @@ type Locale struct {
 	PhoneNumbers    []string
 	StateAbbr       []string
 	StateNames      []string
+	StreetAddress   []string
 	StreetNames     []string
 	StreetSuffixes  []string
 	Universities    []string

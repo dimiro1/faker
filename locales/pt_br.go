@@ -10,8 +10,11 @@ func pt_br_locale() Locale {
 	return Locale{
 		Code: "pt-br",
 
-		AppNames:   []string{},
-		AreaCodes:  []string{},
+		AppNames:  []string{},
+		AreaCodes: []string{},
+		BuildingNumbers: []string{
+			"@", "@#", "@##",
+		},
 		CityPrefix: []string{"Nova", "Velha", "Grande", "Vila", "Município de"},
 		CitySuffix: []string{"do Descoberto", "de Nossa Senhora", "do Norte", "do Sul"},
 
@@ -106,6 +109,7 @@ func pt_br_locale() Locale {
 		StateNames: []string{},
 		StateAbbr:  []string{},
 
+		StreetAddress:  []string{},
 		StreetNames:    []string{},
 		StreetSuffixes: []string{},
 

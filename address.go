@@ -12,16 +12,18 @@ func (f Faker) StreetName() string {
 	return template("StreetName", randomElement(f.CurrentLocale().StreetNames), f)
 }
 
+// StreetAddress return a full street address
 func (f Faker) StreetAddress() string {
-	return "StreetAddress"
+	return template("StreetAddress", randomElement(f.CurrentLocale().StreetAddress), f)
 }
 
 func (f Faker) SecondaryAddress() string {
 	return "SecondaryAddress"
 }
 
+// BuildingNumber return a number of a building
 func (f Faker) BuildingNumber() string {
-	return "BuildingNumber"
+	return format(randomElement(f.CurrentLocale().BuildingNumbers))
 }
 
 // ZipCode must return a zip code
