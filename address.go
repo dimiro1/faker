@@ -36,8 +36,9 @@ func (f Faker) StreetSuffix() string {
 	return randomElement(f.CurrentLocale().StreetSuffixes)
 }
 
+// CityPrefix return a City Prefix
 func (f Faker) CityPrefix() string {
-	return "CityPrefix"
+	return randomElement(f.CurrentLocale().CityPrefix)
 }
 
 // State returns a state name
