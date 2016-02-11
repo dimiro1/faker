@@ -28,6 +28,7 @@ func main() {
 	fmt.Println(fake.CompanyName())
 	fmt.Println(fake.StreetName())
 	fmt.Println(fake.StreetAddress())
+	fmt.Println(fake.City())
 
 	fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }

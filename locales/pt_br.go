@@ -18,23 +18,12 @@ func pt_br_locale() Locale {
 		CityPrefix: []string{"Nova", "Velha", "Grande", "Vila", "Município de"},
 		CitySuffix: []string{"do Descoberto", "de Nossa Senhora", "do Norte", "do Sul"},
 
-		// See https://pt.wikipedia.org/wiki/Lista_de_munic%C3%ADpios_do_Brasil_por_popula%C3%A7%C3%A3o
 		CityNames: []string{
-			"São Paulo", "Rio de Janeiro", "Salvador", "Brasília", "Fortaleza", "Belo Horizonte", "Manaus", "Curitiba",
-			"Recife", "Porto Alegre", "Belém", "Goiânia", "Guarulhos", "Campinas", "São Luís", "São Gonçalo", "Maceió",
-			"Duque de Caxias", "Natal", "Campo Grande", "Teresina", "São Bernardo do Campo", "Nova Iguaçu",
-			"João Pessoa", "Santo André", "Osasco", "Jaboatão dos Guararapes", "São José dos Campos", "Ribeirão Preto",
-			"Uberlândia", "Contagem", "Sorocaba", "Aracaju", "Feira de Santana", "Cuiabá", "Joinville", "Juiz de Fora",
-			"Londrina", "Aparecida de Goiânia", "Niterói", "Ananindeua", "Porto Velho", "Belford Roxo",
-			"Campos dos Goytacazes", "Serra", "Caxias do Sul", "São João de Meriti", "Vila Velha", "Florianópolis",
-			"Mauá", "Macapá", "São José do Rio Preto", "Santos", "Mogi das Cruzes", "Diadema", "Betim",
-			"Campina Grande", "Jundiaí", "Olinda", "Carapicuíba", "Montes Claros", "Maringá", "Piracicaba", "Cariacica",
-			"Bauru", "Anápolis", "Rio Branco", "São Vicente", "Vitória", "Caucaia", "Itaquaquecetuba", "Pelotas",
-			"Canoas", "Caruaru", "Vitória da Conquista", "Franca", "Ponta Grossa", "Blumenau", "Petrolina", "Paulista",
-			"Ribeirão das Neves", "Uberaba", "Boa Vista", "Guarujá", "Cascavel", "Petrópolis", "Taubaté", "Limeira",
-			"Santarém", "Praia Grande", "São José dos Pinhais", "Mossoró", "Suzano", "Camaçari", "Governador Valadares",
-			"Santa Maria", "Gravataí", "Taboão da Serra", "Foz do Iguaçu", "Várzea Grande",
+			"{{ .CityPrefix }} {{ .FirstName }} {{ .CitySuffix }}",
+			"{{ .CityPrefix }} {{ .FirstName }}",
+			"{{ .LastName }} {{ .CitySuffix }}",
 		},
+
 		CompanyNames: []string{
 			"{{ .LastName }} {{ .CompanySuffix }}",
 			"{{ .LastName }}-{{ .LastName }}",

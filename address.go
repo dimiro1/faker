@@ -4,7 +4,7 @@ import "fmt"
 
 // City returns a city name
 func (f Faker) City() string {
-	return randomElement(f.CurrentLocale().CityNames)
+	return template("City", randomElement(f.CurrentLocale().CityNames), f)
 }
 
 // StreetName return a street name
@@ -39,6 +39,11 @@ func (f Faker) StreetSuffix() string {
 // CityPrefix return a City Prefix
 func (f Faker) CityPrefix() string {
 	return randomElement(f.CurrentLocale().CityPrefix)
+}
+
+// CitySuffix return a City Suffix
+func (f Faker) CitySuffix() string {
+	return randomElement(f.CurrentLocale().CitySuffix)
 }
 
 // State returns a state name

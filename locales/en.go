@@ -58,13 +58,9 @@ func en_locale() Locale {
 
 		// See http://www.infoplease.com/ipa/A0108477.html
 		CityNames: []string{
-			"Albuquerque", "Arlington", "Atlanta", "Austin", "Baltimore", "Boston", "Charlotte", "Chicago", "Cleveland",
-			"Colorado Springs", "Columbus", "Dallas", "Denver", "Detroit", "El Paso", "Fort Worth", "Fresno", "Honolulu",
-			"Houston", "Indianapolis", "Jacksonville", "Kansas City", "Las Vegas", "Long Beach", "Los Angeles",
-			"Louisville/Jefferson County", "Memphis", "Mesa", "Miami", "Milwaukee", "Minneapolis", "Nashville-Davidson",
-			"New Orleans", "New York", "Oakland", "Oklahoma City", "Omaha", "Philadelphia", "Phoenix", "Portland",
-			"Raleigh", "Sacramento", "St. Louis", "San Antonio", "San Diego", "San Francisco", "San Jose", "Seattle",
-			"Tucson", "Tulsa", "Virginia Beach", "Washington", "Wichita",
+			"{{ .CityPrefix }} {{ .FirstName }}{{ .CitySuffix }}",
+			"{{ .CityPrefix }} {{ .FirstName }}",
+			"{{ .LastName }}{{ .CitySuffix }}",
 		},
 
 		CompanyNames: []string{
