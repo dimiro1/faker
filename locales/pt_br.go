@@ -10,21 +10,22 @@ func pt_br_locale() Locale {
 	return Locale{
 		Code: "pt-br",
 
-		AppNames:  []string{},
-		AreaCodes: []string{},
+		AddressesFormats: []string{},
+		AppNames:         []string{},
+		AreaCodes:        []string{},
 		BuildingNumbers: []string{
 			"@", "@#", "@##",
 		},
 		CityPrefix: []string{"Nova", "Velha", "Grande", "Vila", "Município de"},
 		CitySuffix: []string{"do Descoberto", "de Nossa Senhora", "do Norte", "do Sul"},
 
-		CityNames: []string{
+		CityNamesFormats: []string{
 			"{{ .CityPrefix }} {{ .FirstName }} {{ .CitySuffix }}",
 			"{{ .CityPrefix }} {{ .FirstName }}",
 			"{{ .LastName }} {{ .CitySuffix }}",
 		},
 
-		CompanyNames: []string{
+		CompanyNamesFormats: []string{
 			"{{ .LastName }} {{ .CompanySuffix }}",
 			"{{ .LastName }}-{{ .LastName }}",
 			"{{ .LastName }} & {{ .LastName }}",
@@ -77,10 +78,10 @@ func pt_br_locale() Locale {
 			"Masculino", "Feminino",
 		},
 		LastName: []string{},
-		Names: []string{
+		NamesFormats: []string{
 			"{{ .FirstName }}",
 		},
-		PhoneNumbers: []string{
+		PhoneNumbersFormats: []string{
 			"+55 (011) #### ####", "+55 (021) #### ####", "+55 (031) #### ####", "+55 (041) #### ####",
 			"+55 (051) #### ####", "+55 (061) #### ####", "+55 (071) #### ####", "+55 (081) #### ####",
 			"+55 11 #### ####", "+55 21 #### ####", "+55 31 #### ####", "+55 41 #### ####", "+55 51 ### ####",
@@ -95,12 +96,13 @@ func pt_br_locale() Locale {
 			"(071) ####-####", "(081) ####-####", "11 ####-####", "21 ####-####", "31 ####-####", "41 ####-####",
 			"51 ### ####", "61 ####-####", "71 ####-####", "81 ####-####", "#### ####", "####-####",
 		},
-		StateNames: []string{},
-		StateAbbr:  []string{},
+		SecondaryAddressesFormats: []string{},
+		StateNames:                []string{},
+		StateAbbr:                 []string{},
 
-		StreetAddress:  []string{},
-		StreetNames:    []string{},
-		StreetSuffixes: []string{},
+		StreetAddressesFormats: []string{},
+		StreetNamesFormats:     []string{},
+		StreetSuffixes:         []string{},
 
 		// See https://pt.wikipedia.org/wiki/Lista_de_universidades_do_Brasil
 		Universities: []string{
@@ -219,7 +221,7 @@ func pt_br_locale() Locale {
 			"Universidade Vila Velha (UVV)", "Univesidade do Alto Vale do Rio do Pixe (UNIARP)",
 		},
 
-		Zip: []string{
+		ZipFormats: []string{
 			"#####-###",
 		},
 	}

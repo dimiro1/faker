@@ -10,6 +10,9 @@ func en_locale() Locale {
 	return Locale{
 		Code: "en",
 
+		AddressesFormats: []string{
+			"{{ .StreetAddress }}\n{{ .City }}, {{ .StateAbbr }} {{ .ZipCode }}",
+		},
 		// This list was extracted from this github project https://github.com/stympy/faker/
 		// See https://github.com/stympy/faker/blob/master/lib/locales/en.yml
 		AppNames: []string{
@@ -57,13 +60,13 @@ func en_locale() Locale {
 			"chester", "mouth", "fort", "haven", "side", "shire"},
 
 		// See http://www.infoplease.com/ipa/A0108477.html
-		CityNames: []string{
+		CityNamesFormats: []string{
 			"{{ .CityPrefix }} {{ .FirstName }}{{ .CitySuffix }}",
 			"{{ .CityPrefix }} {{ .FirstName }}",
 			"{{ .LastName }}{{ .CitySuffix }}",
 		},
 
-		CompanyNames: []string{
+		CompanyNamesFormats: []string{
 			"{{ .LastName }} {{ .CompanySuffix }}",
 			"{{ .LastName }}-{{ .LastName }}",
 			"{{ .LastName }} & {{ .LastName }}",
@@ -983,7 +986,7 @@ func en_locale() Locale {
 			"Zboncak", "Zemlak", "Ziemann", "Zieme", "Zulauf",
 		},
 
-		Names: []string{
+		NamesFormats: []string{
 			"{{ .FirstName }}",
 			"{{ .FirstName }} {{ .LastName }}",
 			"{{ .Prefix }} {{ .FirstName }} {{ .LastName }}",
@@ -993,12 +996,19 @@ func en_locale() Locale {
 		},
 
 		// See https://github.com/joke2k/faker/blob/master/faker/providers/phone_number/en_US/__init__.py
-		PhoneNumbers: []string{
+		PhoneNumbersFormats: []string{
 			"+##(#)##########", "+##(#)##########", "0##########", "0##########", "###-###-####", "(###)###-####",
 			"1-###-###-####", "###.###.####", "###-###-####", "(###)###-####", "1-###-###-####", "###.###.####",
 			"###-###-####x###", "(###)###-####x###", "1-###-###-####x###", "###.###.####x###", "###-###-####x####",
 			"(###)###-####x####", "1-###-###-####x####", "###.###.####x####", "###-###-####x#####",
 			"(###)###-####x#####", "1-###-###-####x#####", "###.###.####x#####",
+		},
+
+		SecondaryAddressesFormats: []string{
+			"Apt. @#",
+			"Apt. @##",
+			"Suite @#",
+			"Suite @##",
 		},
 
 		StateNames: []string{
@@ -1010,7 +1020,7 @@ func en_locale() Locale {
 			"Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming",
 		},
 
-		StreetAddress: []string{
+		StreetAddressesFormats: []string{
 			"{{ .BuildingNumber }} {{ .StreetName }}",
 		},
 
@@ -1020,7 +1030,7 @@ func en_locale() Locale {
 			"OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY",
 		},
 
-		StreetNames: []string{
+		StreetNamesFormats: []string{
 			"{{ .LastName }} {{ .StreetSuffix }}",
 		},
 
@@ -1043,8 +1053,8 @@ func en_locale() Locale {
 			"Williams College", "Yale University",
 		},
 
-		Zip: []string{
-			"#####",
+		ZipFormats: []string{
+			"@####",
 		},
 	}
 }

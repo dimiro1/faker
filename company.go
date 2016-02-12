@@ -2,7 +2,7 @@ package faker
 
 // CompanyName returns a company name
 func (f Faker) CompanyName() string {
-	return template("CompanyName", randomElement(f.CurrentLocale().CompanyNames), f)
+	return template("CompanyName", randomElement(f.CurrentLocale().CompanyNamesFormats), f)
 }
 
 // CompanySuffix returns a company suffix such as 'corp', 'LLC'

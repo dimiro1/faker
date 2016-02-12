@@ -2,23 +2,29 @@ package faker
 
 import "fmt"
 
+// Address returns a full address
+func (f Faker) Address() string {
+	return template("Address", randomElement(f.CurrentLocale().AddressesFormats), f)
+}
+
 // City returns a city name
 func (f Faker) City() string {
-	return template("City", randomElement(f.CurrentLocale().CityNames), f)
+	return template("City", randomElement(f.CurrentLocale().CityNamesFormats), f)
 }
 
 // StreetName return a street name
 func (f Faker) StreetName() string {
-	return template("StreetName", randomElement(f.CurrentLocale().StreetNames), f)
+	return template("StreetName", randomElement(f.CurrentLocale().StreetNamesFormats), f)
 }
 
 // StreetAddress return a full street address
 func (f Faker) StreetAddress() string {
-	return template("StreetAddress", randomElement(f.CurrentLocale().StreetAddress), f)
+	return template("StreetAddress", randomElement(f.CurrentLocale().StreetAddressesFormats), f)
 }
 
+// SecondaryAddress returns a Secondary Address
 func (f Faker) SecondaryAddress() string {
-	return "SecondaryAddress"
+	return format(template("SecondaryAddress", randomElement(f.CurrentLocale().SecondaryAddressesFormats), f))
 }
 
 // BuildingNumber return a number of a building
@@ -28,7 +34,7 @@ func (f Faker) BuildingNumber() string {
 
 // ZipCode must return a zip code
 func (f Faker) ZipCode() string {
-	return randomElement(f.CurrentLocale().Zip)
+	return format(randomElement(f.CurrentLocale().ZipFormats))
 }
 
 // StreetSuffix return a Street Suffix

@@ -2,12 +2,12 @@ package faker
 
 // PhoneNumber returns a phone number
 func (f Faker) PhoneNumber() string {
-	return format(randomElement(f.CurrentLocale().PhoneNumbers))
+	return format(randomElement(f.CurrentLocale().PhoneNumbersFormats))
 }
 
 // CellPhoneNumber returns a cellphone number
 func (f Faker) CellPhoneNumber() string {
-	return format(randomElement(f.CurrentLocale().PhoneNumbers))
+	return format(randomElement(f.CurrentLocale().PhoneNumbersFormats))
 }
 
 // PhoneAreaCode returns an area code
