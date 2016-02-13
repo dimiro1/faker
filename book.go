@@ -1,7 +1,8 @@
 package faker
 
+// BookTitle returns a fake book title
 func (f Faker) BookTitle() string {
-	return "BookTitle"
+	return randomElement(f.CurrentLocale().BookTitles)
 }
 
 // BookAuthor returns a fake author name

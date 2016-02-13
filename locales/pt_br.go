@@ -13,6 +13,7 @@ func pt_br_locale() Locale {
 		AddressesFormats:       []string{},
 		AppNames:               []string{},
 		AreaCodes:              []string{},
+		BookTitles:             []string{},
 		BookGenres:             []string{},
 		BookPublishersFormats:  []string{},
 		BookPublishersSuffixes: []string{},
