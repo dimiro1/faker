@@ -16,3 +16,15 @@ func TestFakerStoreDepartment(t *testing.T) {
 	d := f.StoreDepartment()
 	assertElementInSlice(t, d, f.CurrentLocale().StoreDepartments)
 }
+
+func TestFakerProductSimpleName(t *testing.T) {
+	f := NewDefault()
+	p := f.ProductSimpleName()
+	assertElementInSlice(t, p, f.CurrentLocale().ProductNames)
+}
+
+func TestFakerProductAdjective(t *testing.T) {
+	f := NewDefault()
+	p := f.ProductAdjective()
+	assertElementInSlice(t, p, f.CurrentLocale().ProductAdjectives)
+}

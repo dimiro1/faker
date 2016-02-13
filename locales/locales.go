@@ -24,6 +24,9 @@ type Locale struct {
 	LastName                  []string
 	NamesFormats              []string
 	PhoneNumbersFormats       []string
+	ProductAdjectives         []string
+	ProductNames              []string
+	ProductNamesFormats       []string
 	SecondaryAddressesFormats []string
 	StateAbbr                 []string
 	StateNames                []string

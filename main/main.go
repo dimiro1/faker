@@ -34,5 +34,7 @@ func main() {
 	fmt.Println(fake.BookPublisher())
 	fmt.Println(fake.BookGenre())
 
+	fmt.Println(fake.ProductName())
+
 	// fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }

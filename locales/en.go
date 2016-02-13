@@ -1067,6 +1067,22 @@ func en_locale() Locale {
 			"(###)###-####x#####", "1-###-###-####x#####", "###.###.####x#####",
 		},
 
+		ProductAdjectives: []string{
+			"Small", "Ergonomic", "Rustic", "Intelligent", "Gorgeous", "Incredible", "Fantastic",
+			"Practical", "Sleek", "Awesome", "Enormous", "Mediocre", "Synergistic", "Heavy Duty",
+			"Lightweight", "Aerodynamic", "Durable", "2000", "3000", "4000", "5000",
+		},
+
+		ProductNames: []string{
+			"Chair", "Car", "Computer", "Gloves", "Pants", "Shirt", "Table", "Shoes", "Hat", "Plate", "Knife",
+			"Bottle", "Coat", "Lamp", "Keyboard", "Bag", "Bench", "Clock", "Watch", "Wallet",
+		},
+
+		ProductNamesFormats: []string{
+			"{{ .ProductSimpleName }}",
+			"{{ .ProductSimpleName }} {{ .ProductAdjective }}",
+		},
+
 		SecondaryAddressesFormats: []string{
 			"Apt. @#",
 			"Apt. @##",
