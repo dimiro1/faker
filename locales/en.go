@@ -1101,6 +1101,11 @@ func en_locale() Locale {
 			"Street",
 		},
 
+		StoreDepartments: []string{
+			"Video", "Books", "Movies", "Music", "Garden", "Beauty", "Eletronics & Computers", "Toys & Kids",
+			"Clothing", "Shoes", "Automotive", "Sports", "Tools", "Video Games", "Software",
+		},
+
 		// See http://www.forbes.com/top-colleges/list/2/#tab:rank
 		Universities: []string{
 			"Amherst College", "Boston College", "Bowdoin College", "Brown University",

@@ -30,6 +30,7 @@ type Locale struct {
 	StreetAddressesFormats    []string
 	StreetNamesFormats        []string
 	StreetSuffixes            []string
+	StoreDepartments          []string
 	Universities              []string
 	ZipFormats                []string
 }
