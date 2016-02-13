@@ -7,6 +7,8 @@ type Locale struct {
 	AddressesFormats          []string
 	AppNames                  []string
 	AreaCodes                 []string
+	BookPublishersFormats     []string
+	BookPublishersSuffixes    []string
 	BuildingNumbers           []string
 	CityNamesFormats          []string
 	CityPrefix                []string

@@ -10,9 +10,11 @@ func pt_br_locale() Locale {
 	return Locale{
 		Code: "pt-br",
 
-		AddressesFormats: []string{},
-		AppNames:         []string{},
-		AreaCodes:        []string{},
+		AddressesFormats:       []string{},
+		AppNames:               []string{},
+		AreaCodes:              []string{},
+		BookPublishersFormats:  []string{},
+		BookPublishersSuffixes: []string{},
 		BuildingNumbers: []string{
 			"@", "@#", "@##",
 		},

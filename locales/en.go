@@ -50,6 +50,14 @@ func en_locale() Locale {
 			"956", "959", "970", "971", "972", "973", "975", "978", "979", "980", "984", "985", "989",
 		},
 
+		BookPublishersFormats: []string{
+			"{{ .CompanyName }} {{ .BookPublisherSuffix }}",
+		},
+
+		BookPublishersSuffixes: []string{
+			"Press", "Books", "Publishing", "House", "Publications", "International", "Library", "Learning",
+		},
+
 		BuildingNumbers: []string{
 			"@", "@#", "@##",
 		},

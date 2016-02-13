@@ -31,6 +31,7 @@ func main() {
 	fmt.Println(fake.City())
 
 	fmt.Println(fake.Address())
+	fmt.Println(fake.BookPublisher())
 
 	// fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }

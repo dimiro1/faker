@@ -4,12 +4,19 @@ func (f Faker) BookTitle() string {
 	return "BookTitle"
 }
 
+// BookAuthor returns a fake author name
 func (f Faker) BookAuthor() string {
-	return "BookAuthor"
+	return f.Name()
 }
 
+// BookPublisher return a publisher company name
 func (f Faker) BookPublisher() string {
-	return "BookPublisher"
+	return template("BookPublisher", randomElement(f.CurrentLocale().BookPublishersFormats), f)
+}
+
+// BookPublisherSuffix return a publisher company suffix
+func (f Faker) BookPublisherSuffix() string {
+	return randomElement(f.CurrentLocale().BookPublishersSuffixes)
 }
 
 func (f Faker) BookGenre() string {
