@@ -50,6 +50,12 @@ func en_locale() Locale {
 			"956", "959", "970", "971", "972", "973", "975", "978", "979", "980", "984", "985", "989",
 		},
 
+		// See https://en.wikipedia.org/wiki/List_of_writing_genres
+		BookGenres: []string{
+			"Drama", "Novel", "Novella", "Poem", "Comedy", "Fiction", "Non Fiction", "Romance", "Satire", "Tragedy",
+			"Classic", "Fable", "Crime", "Mystery", "Mythology", "Science fiction", "Biography", "Journalism", "Erotic",
+		},
+
 		BookPublishersFormats: []string{
 			"{{ .CompanyName }} {{ .BookPublisherSuffix }}",
 		},
