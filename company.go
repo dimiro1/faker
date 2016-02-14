@@ -22,6 +22,7 @@ func (f Faker) CompanyEIN() string {
 	return "CompanyEIN"
 }
 
+// CompanyLogo returns a fake URL company name
 func (f Faker) CompanyLogo() string {
-	return "https://pigment.github.com/fake-logos/logos/medium/color/5.png"
+	return randomElement(companyLogos)
 }

@@ -116,6 +116,23 @@ var (
 		"XVIII", "XIX", "XX", "XXI",
 	}
 
+	// See https://github.com/pigment/fake-logos
+	companyLogos = []string{
+		"https://pigment.github.com/fake-logos/logos/medium/color/1.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/2.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/3.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/4.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/5.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/6.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/7.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/8.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/9.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/10.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/11.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/12.png",
+		"https://pigment.github.com/fake-logos/logos/medium/color/13.png",
+	}
+
 	// See https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 	timezones = []string{
 		"Africa/Abidjan", "Africa/Accra", "Africa/Addis_Ababa", "Africa/Algiers", "Africa/Asmara", "Africa/Asmera",
