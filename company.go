@@ -10,10 +10,6 @@ func (f Faker) CompanySuffix() string {
 	return randomElement(f.CurrentLocale().CompanySuffixes)
 }
 
-func (f Faker) CompanyCatchPhrase() string {
-	return "CompanyCatchPhrase"
-}
-
 func (f Faker) CompanyBuzzword() string {
 	return "CompanyBuzzword"
 }
