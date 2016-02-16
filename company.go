@@ -18,10 +18,6 @@ func (f Faker) CompanyBuzzword() string {
 	return "CompanyBuzzword"
 }
 
-func (f Faker) CompanyEIN() string {
-	return "CompanyEIN"
-}
-
 // CompanyLogo returns a fake URL company name
 func (f Faker) CompanyLogo() string {
 	return randomElement(companyLogos)
