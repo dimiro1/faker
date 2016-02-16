@@ -10,10 +10,6 @@ func (f Faker) CompanySuffix() string {
 	return randomElement(f.CurrentLocale().CompanySuffixes)
 }
 
-func (f Faker) CompanyBuzzword() string {
-	return "CompanyBuzzword"
-}
-
 // CompanyLogo returns a fake URL company name
 func (f Faker) CompanyLogo() string {
 	return randomElement(companyLogos)
