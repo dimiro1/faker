@@ -73,8 +73,9 @@ func (f Faker) UserNameWithOptions(o UserNameOptions) string {
 	return strings.Join(words, o.Sep)
 }
 
+// Password returns a 8 length password
 func (f Faker) Password() string {
-	return "eliza"
+	return format("********")
 }
 
 func (f Faker) PasswordWithOptions(o PassWordOptions) string {

@@ -2,6 +2,11 @@ package faker
 
 import "testing"
 
+func TestFakerPassword(t *testing.T) {
+	f := NewDefault()
+	assertStringRegexp(t, "^[a-f0-9]{8}$", f.Password())
+}
+
 func TestFakerUserName(t *testing.T) {
 	f := NewDefault()
 	assertStringRegexp(t, "^\\w+$", f.UserName())
