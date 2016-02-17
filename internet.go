@@ -1,5 +1,7 @@
 package faker
 
+import "strings"
+
 type EmailOptions struct {
 	Name string
 }
@@ -49,8 +51,9 @@ func (f Faker) SafeEmailWithOptions(o EmailOptions) string {
 	return "eliza@gmail.com"
 }
 
+// UserName returns a username
 func (f Faker) UserName() string {
-	return "eliza"
+	return strings.ToLower(f.FirstName())
 }
 
 func (f Faker) UserNameWithOptions(o UserNameOptions) string {

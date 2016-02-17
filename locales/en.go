@@ -1052,10 +1052,6 @@ func en_locale() Locale {
 		NamesFormats: []string{
 			"{{ .FirstName }}",
 			"{{ .FirstName }} {{ .LastName }}",
-			"{{ .Prefix }} {{ .FirstName }} {{ .LastName }}",
-			"{{ .Prefix }} {{ .FirstName }} {{ .LastName }} {{ .Suffix }}",
-			"{{ .FirstName }} {{ .LastName }} {{ .Suffix }}",
-			"{{ .FirstName }} {{ .Suffix }}",
 		},
 
 		// See https://github.com/joke2k/faker/blob/master/faker/providers/phone_number/en_US/__init__.py
