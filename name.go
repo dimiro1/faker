@@ -15,18 +15,6 @@ func (f Faker) LastName() string {
 	return randomElement(f.CurrentLocale().LastName)
 }
 
-func (f Faker) Prefix() string {
-	return "Sr."
-}
-
-func (f Faker) Suffix() string {
-	return "III"
-}
-
-func (f Faker) Title() string {
-	return "Legacy Creative Director"
-}
-
 // Gender returns a gender name
 func (f Faker) Gender() string {
 	return randomElement(f.CurrentLocale().Gender)
