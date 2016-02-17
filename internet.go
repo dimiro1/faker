@@ -1,6 +1,10 @@
 package faker
 
-import "strings"
+import (
+	"strings"
+
+	"github.com/dimiro1/faker/defaults"
+)
 
 type EmailOptions struct {
 	Name string
@@ -56,8 +60,17 @@ func (f Faker) UserName() string {
 	return strings.ToLower(f.FirstName())
 }
 
+// UserNameWithOptions returns a username with the default options
 func (f Faker) UserNameWithOptions(o UserNameOptions) string {
-	return "eliza"
+	defaults.Apply(&o)
+
+	var words []string
+
+	for _, word := range strings.Split(o.Name, " ") {
+		words = append(words, strings.ToLower(word))
+	}
+
+	return strings.Join(words, o.Sep)
 }
 
 func (f Faker) Password() string {
