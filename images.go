@@ -12,12 +12,45 @@ type ImageOptions struct {
 	Format string `default:".jpg"`
 }
 
-func (f Faker) AvatarImage() string {
-	return "AvatarImage"
+type AvatarOptions struct {
+	Size   string `default:"300"`
+	Format string `default:".jpg"`
+	Email  string
 }
 
-func (f Faker) AvatarImageWithOptions(o ImageOptions) string {
-	return "AvatarImageWithOptions"
+// AvatarImage returns a Avatar image
+func (f Faker) AvatarImage() string {
+	width := randomIntBetween(100, 400)
+
+	return f.AvatarImageWithOptions(AvatarOptions{
+		Size:   fmt.Sprintf("%d", width),
+		Format: ".jpg",
+		Email:  f.Email(),
+	})
+}
+
+// AvatarImageWithOptions returns a AvatarImage image
+func (f Faker) AvatarImageWithOptions(o AvatarOptions) string {
+	defaults.Apply(&o)
+
+	if o.Email == "" {
+		panic(fmt.Sprintf("images: %s is empty", o.Email))
+	}
+
+	formats := []string{".jpg", ".png"}
+	valid := false
+
+	for _, format := range formats {
+		if o.Format == format {
+			valid = true
+		}
+	}
+
+	if !valid {
+		panic(fmt.Sprintf("images: %s is an invalid format, valid formats are %s", o.Format, formats))
+	}
+
+	return fmt.Sprintf("http://api.adorable.io/avatars/%s/%s%s", o.Size, o.Email, o.Format)
 }
 
 // PlaceholderImage returns a Placeholder image
@@ -25,7 +58,9 @@ func (f Faker) PlaceholderImage() string {
 	width := randomIntBetween(100, 400)
 	height := randomIntBetween(100, 400)
 
-	return fmt.Sprintf("http://placehold.it/%dx%d", width, height)
+	return f.PlaceholderImageWithOptions(ImageOptions{
+		Size: fmt.Sprintf("%dx%d", width, height),
+	})
 }
 
 // PlaceholderImageWithOptions returns a Placeholder image

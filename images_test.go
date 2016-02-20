@@ -2,9 +2,50 @@ package faker
 
 import "testing"
 
+func TestFakerAvatarImage(t *testing.T) {
+	f := NewDefault()
+	assertStringRegexp(t, "^http://api.adorable.io/avatars/(\\d+)/(.+).jpg$", f.AvatarImage())
+}
+
+func TestFakerAvatarImageWithOptions_with_invalid_format(t *testing.T) {
+	f := NewDefault()
+
+	defer func() {
+		if r := recover(); r == nil {
+			t.Error("Should panic with wrong Format argument")
+		}
+	}()
+
+	f.AvatarImageWithOptions(AvatarOptions{Format: ".asas", Email: "hello@example.com"})
+}
+
+func TestFakerAvatarImageWithOptions_with_invalid_size(t *testing.T) {
+	f := NewDefault()
+
+	defer func() {
+		if r := recover(); r == nil {
+			t.Error("Should panic with wrong Size argument")
+		}
+	}()
+
+	f.AvatarImageWithOptions(AvatarOptions{Size: "asasacdcd"})
+}
+
+func TestFakerAvatarImageWithOptions_with_empty_email(t *testing.T) {
+	f := NewDefault()
+
+	defer func() {
+		if r := recover(); r == nil {
+			t.Error("Should panic with empty email")
+		}
+	}()
+
+	f.AvatarImageWithOptions(AvatarOptions{Email: ""})
+}
+
 func TestFakerPlaceholderImage(t *testing.T) {
 	f := NewDefault()
-	assertStringRegexp(t, "^http://placehold.it/\\d+x\\d+$", f.PlaceholderImage())
+	assertStringRegexp(t, "^http://placehold.it/\\d+x\\d+\\.(jpeg|jpg|gif|png)$", f.PlaceholderImage())
 }
 
 func TestFakerPlaceholderImageWithOptions_with_defaults(t *testing.T) {

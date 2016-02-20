@@ -2,6 +2,10 @@ package faker
 
 import "time"
 
+func (f Faker) DateTime() time.Time {
+	return time.Now()
+}
+
 func (f Faker) DateTimeBetween(d1, d2 time.Time) time.Time {
 	return time.Now()
 }
@@ -19,8 +23,9 @@ func (f Faker) AMPM() string {
 	return randomElement(ampm)
 }
 
-func (f Faker) ISO8601() string {
-	return "ISO8601"
+// RFC3339 returns a random date formatted as RFC3339
+func (f Faker) RFC3339() string {
+	return f.DateTime().Format(time.RFC3339)
 }
 
 // Year returns a year between 1500 and 2100
