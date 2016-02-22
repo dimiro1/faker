@@ -14,8 +14,11 @@ func (f Faker) DateTimeBefore(d time.Time) time.Time {
 	return time.Now()
 }
 
+// DateTimeAfter returns a date after the specified date
 func (f Faker) DateTimeAfter(d time.Time) time.Time {
-	return time.Now()
+	days := time.Hour * 24 * time.Duration(randomIntBetween(1, 1000))
+
+	return d.Add(days)
 }
 
 // AMPM returns a string AM or PM

@@ -1,6 +1,9 @@
 package faker
 
-import "testing"
+import (
+	"testing"
+	"time"
+)
 
 func TestFakerAMPM(t *testing.T) {
 	f := NewDefault()
@@ -12,6 +15,16 @@ func TestFakerCentury(t *testing.T) {
 	f := NewDefault()
 	l := f.Century()
 	assertElementInSlice(t, l, centuries)
+}
+
+func TestFakerDateTimeAfter(t *testing.T) {
+	f := NewDefault()
+	now := time.Now()
+	c := f.DateTimeAfter(now)
+
+	if !c.After(now) {
+		t.Error("DateTimeAfter must be after the specified date")
+	}
 }
 
 func TestFakerYear(t *testing.T) {
