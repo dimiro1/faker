@@ -6,12 +6,19 @@ func (f Faker) DateTime() time.Time {
 	return time.Now()
 }
 
+// DateTimeBetween returns a date beetween d1 and d2
 func (f Faker) DateTimeBetween(d1, d2 time.Time) time.Time {
-	return time.Now()
+	diff := d2.Sub(d1).Hours()
+	hours := randomIntBetween(1, int(diff))
+
+	return d1.Add(time.Hour * time.Duration(hours))
 }
 
+// DateTimeBefore returns a date before the specified date
 func (f Faker) DateTimeBefore(d time.Time) time.Time {
-	return time.Now()
+	days := time.Hour * 24 * time.Duration(randomIntBetween(1, 1000))
+
+	return d.Add(-days)
 }
 
 // DateTimeAfter returns a date after the specified date

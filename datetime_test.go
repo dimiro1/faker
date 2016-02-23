@@ -17,6 +17,17 @@ func TestFakerCentury(t *testing.T) {
 	assertElementInSlice(t, l, centuries)
 }
 
+func TestFakerDateTimeBetween(t *testing.T) {
+	f := NewDefault()
+	begin := time.Now()
+	end := time.Now().Add(time.Hour * 6)
+	c := f.DateTimeBetween(begin, end)
+
+	if c.Before(begin) || c.After(end) {
+		t.Errorf("DateTimeBetween must be beetween the specified dates: %s", c)
+	}
+}
+
 func TestFakerDateTimeAfter(t *testing.T) {
 	f := NewDefault()
 	now := time.Now()
@@ -24,6 +35,16 @@ func TestFakerDateTimeAfter(t *testing.T) {
 
 	if !c.After(now) {
 		t.Error("DateTimeAfter must be after the specified date")
+	}
+}
+
+func TestFakerDateTimeBefore(t *testing.T) {
+	f := NewDefault()
+	now := time.Now()
+	c := f.DateTimeBefore(now)
+
+	if !c.Before(now) {
+		t.Error("DateTimeBefore must be before the specified date")
 	}
 }
 
