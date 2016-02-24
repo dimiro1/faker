@@ -36,6 +36,7 @@ func main() {
 
 	fmt.Println(fake.ProductName())
 	fmt.Println(fake.CompanyLogo())
+	fmt.Println(fake.DateTime())
 
 	// fmt.Printf("%s %s %s\n", fake.AppName(), fake.AppVersion(), fake.AppAuthor())
 }

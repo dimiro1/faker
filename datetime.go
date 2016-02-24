@@ -2,8 +2,18 @@ package faker
 
 import "time"
 
+// Ask google
+// https://www.google.com.br/webhp?ie=UTF-8#q=100+years+in+hours
+const maximumHours int = 876000 // 100 years in hours
+
+// DateTime returns a random datetime
+// The date is maximum 100 years from now in the past or in the future
 func (f Faker) DateTime() time.Time {
-	return time.Now()
+	if randomBoolean() {
+		return f.DateTimeBefore(time.Now())
+	} else {
+		return f.DateTimeAfter(time.Now())
+	}
 }
 
 // DateTimeBetween returns a date beetween d1 and d2
@@ -15,15 +25,17 @@ func (f Faker) DateTimeBetween(d1, d2 time.Time) time.Time {
 }
 
 // DateTimeBefore returns a date before the specified date
+// The date is maximum 100 years from now in the past
 func (f Faker) DateTimeBefore(d time.Time) time.Time {
-	days := time.Hour * 24 * time.Duration(randomIntBetween(1, 1000))
+	hours := time.Hour * time.Duration(randomIntBetween(1, maximumHours))
 
-	return d.Add(-days)
+	return d.Add(-hours)
 }
 
 // DateTimeAfter returns a date after the specified date
+// The date is maximum 100 years from now in the future
 func (f Faker) DateTimeAfter(d time.Time) time.Time {
-	days := time.Hour * 24 * time.Duration(randomIntBetween(1, 1000))
+	days := time.Hour * time.Duration(randomIntBetween(1, maximumHours))
 
 	return d.Add(days)
 }

@@ -17,6 +17,16 @@ func TestFakerCentury(t *testing.T) {
 	assertElementInSlice(t, l, centuries)
 }
 
+func TestFakerDateTime(t *testing.T) {
+	f := NewDefault()
+	d := f.DateTime()
+	begin := time.Now().Add(-(time.Hour * time.Duration(maximumHours)))
+	end := time.Now().Add((time.Hour * time.Duration(maximumHours)))
+
+	if d.Before(begin) || d.After(end) {
+		t.Errorf("DateTime must be beetween the specified dates: %s", d)
+	}
+}
 func TestFakerDateTimeBetween(t *testing.T) {
 	f := NewDefault()
 	begin := time.Now()
