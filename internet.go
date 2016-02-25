@@ -17,7 +17,7 @@ type UserNameOptions struct {
 
 type PassWordOptions struct {
 	Length int  `default:"8"`
-	Alpha  bool `default:"true"`
+	Alpha  bool `default:"false"`
 }
 
 type URLOptions struct {
@@ -78,8 +78,19 @@ func (f Faker) Password() string {
 	return format("********")
 }
 
+// PasswordWithOptions returns password defined by the options
 func (f Faker) PasswordWithOptions(o PassWordOptions) string {
-	return "eliza"
+	defaults.Apply(&o)
+
+	var pass string
+
+	if o.Alpha {
+		pass = fillString("*", o.Length)
+	} else {
+		pass = fillString("#", o.Length)
+	}
+
+	return format(pass)
 }
 
 func (f Faker) DomainName() string {
