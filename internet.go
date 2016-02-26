@@ -113,8 +113,9 @@ func (f Faker) IPV6() string {
 	return ""
 }
 
+// MacAddress returns a IEEE 802 MAC address
 func (f Faker) MacAddress() string {
-	return "00:77:89:34:a4"
+	return format("**:**:**:**:**:**")
 }
 
 func (f Faker) URL() string {

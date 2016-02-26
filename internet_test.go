@@ -27,3 +27,8 @@ func TestFakerUserNameWithOptions(t *testing.T) {
 	assertStringRegexp(t, "fulano", f.UserNameWithOptions(UserNameOptions{Name: "Fulano"}))
 	assertStringRegexp(t, "fulano-de-tal", f.UserNameWithOptions(UserNameOptions{Name: "Fulano de Tal"}))
 }
+
+func TestFakerMacAddress(t *testing.T) {
+	f := NewDefault()
+	assertStringRegexp(t, "^[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}$", f.MacAddress())
+}
