@@ -35,6 +35,10 @@ var (
 		"#.#.#-release",
 	}
 
+	browsers = []string{
+		"Chrome", "Firefox", "Internet Explorer", "Opera", "Safari",
+	}
+
 	// countryCodes is an intertational ISO code, this list should not be in locales.
 	countryCodes = []string{
 		"AF", "AL", "DZ", "AS", "AD", "AO", "AI", "AQ", "AG", "AR", "AM", "AW", "AU", "AT", "AZ", "BS", "BH",

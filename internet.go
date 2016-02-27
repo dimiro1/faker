@@ -105,10 +105,6 @@ func (f Faker) IPV4() string {
 	return "127.0.0.1"
 }
 
-func (f Faker) PublicIPV4() string {
-	return "203.134.76.1"
-}
-
 func (f Faker) IPV6() string {
 	return ""
 }
@@ -158,6 +154,7 @@ func (f Faker) SafariUserAgent() string {
 	return ""
 }
 
+// Browser returns a Browser name
 func (f Faker) Browser() string {
-	return ""
+	return randomElement(browsers)
 }

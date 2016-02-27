@@ -32,3 +32,9 @@ func TestFakerMacAddress(t *testing.T) {
 	f := NewDefault()
 	assertStringRegexp(t, "^[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}:[a-f0-9]{2}$", f.MacAddress())
 }
+
+func TestFakerBrowser(t *testing.T) {
+	f := NewDefault()
+	b := f.Browser()
+	assertElementInSlice(t, b, browsers)
+}
