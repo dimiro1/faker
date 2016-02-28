@@ -1,6 +1,7 @@
 package faker
 
 import (
+	"fmt"
 	"strings"
 
 	"github.com/dimiro1/faker/defaults"
@@ -47,12 +48,24 @@ func (f Faker) FreeEmailWithOptions(o EmailOptions) string {
 	return "eliza@gmail.com"
 }
 
+// SafeEmail returns a random safe email
 func (f Faker) SafeEmail() string {
-	return "eliza@gmail.com"
+	username := f.UserName()
+	return f.SafeEmailWithOptions(EmailOptions{Name: username})
 }
 
+// SafeEmailWithOptions returns a safe email with the options
 func (f Faker) SafeEmailWithOptions(o EmailOptions) string {
-	return "eliza@gmail.com"
+	defaults.Apply(&o)
+
+	if o.Name == "" {
+		panic("faker: '' is not a valid username for email")
+	}
+
+	username := f.UserNameWithOptions(UserNameOptions{Name: o.Name})
+	domain := randomElement(safeEmailDomains)
+
+	return fmt.Sprintf("%s@%s", username, domain)
 }
 
 // UserName returns a username

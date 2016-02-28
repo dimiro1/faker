@@ -1,6 +1,27 @@
 package faker
 
-import "testing"
+import (
+	"strings"
+	"testing"
+)
+
+func TestFakerSafeEmail(t *testing.T) {
+	f := NewDefault()
+	email := f.SafeEmail()
+	splited := strings.Split(email, "@")
+
+	assertStringRegexp(t, "^\\w+$", splited[0])
+	assertElementInSlice(t, splited[1], safeEmailDomains)
+}
+
+func TestFakerSafeEmailWithOptions(t *testing.T) {
+	f := NewDefault()
+	email := f.SafeEmailWithOptions(EmailOptions{Name: "Fulano"})
+	splited := strings.Split(email, "@")
+
+	assertStringRegexp(t, "fulano", splited[0])
+	assertElementInSlice(t, splited[1], safeEmailDomains)
+}
 
 func TestFakerPassword(t *testing.T) {
 	f := NewDefault()

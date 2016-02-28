@@ -133,6 +133,14 @@ var (
 		"342584825083322",
 	}
 
+	safeEmailDomains = []string{
+		"gmail.com",
+		"hotmail.com",
+		"yahoo.com",
+		"msn.com",
+		"outlook.com",
+	}
+
 	// Common used operating systems
 	operatingSystems = []string{
 		"AmigaOS", "Android", "BeOS", "Chrome OS", "DOS", "FreeBSD", "GNU/Linux", "HP-UX", "IOS", "MacOS", "Minix",
