@@ -40,22 +40,14 @@ func (f Faker) EmailWithOptions(o EmailOptions) string {
 	return "eliza@mann.net"
 }
 
+// FreeEmail returns a random safe email
 func (f Faker) FreeEmail() string {
-	return "eliza@gmail.com"
-}
-
-func (f Faker) FreeEmailWithOptions(o EmailOptions) string {
-	return "eliza@gmail.com"
-}
-
-// SafeEmail returns a random safe email
-func (f Faker) SafeEmail() string {
 	username := f.UserName()
-	return f.SafeEmailWithOptions(EmailOptions{Name: username})
+	return f.FreeEmailWithOptions(EmailOptions{Name: username})
 }
 
-// SafeEmailWithOptions returns a safe email with the options
-func (f Faker) SafeEmailWithOptions(o EmailOptions) string {
+// FreeEmailWithOptions returns a safe email with the options
+func (f Faker) FreeEmailWithOptions(o EmailOptions) string {
 	defaults.Apply(&o)
 
 	if o.Name == "" {
@@ -63,7 +55,7 @@ func (f Faker) SafeEmailWithOptions(o EmailOptions) string {
 	}
 
 	username := f.UserNameWithOptions(UserNameOptions{Name: o.Name})
-	domain := randomElement(safeEmailDomains)
+	domain := randomElement(freeEmailDomains)
 
 	return fmt.Sprintf("%s@%s", username, domain)
 }

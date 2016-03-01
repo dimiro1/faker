@@ -133,7 +133,7 @@ var (
 		"342584825083322",
 	}
 
-	safeEmailDomains = []string{
+	freeEmailDomains = []string{
 		"gmail.com",
 		"hotmail.com",
 		"yahoo.com",

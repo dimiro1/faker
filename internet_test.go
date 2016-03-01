@@ -7,20 +7,20 @@ import (
 
 func TestFakerSafeEmail(t *testing.T) {
 	f := NewDefault()
-	email := f.SafeEmail()
+	email := f.FreeEmail()
 	splited := strings.Split(email, "@")
 
 	assertStringRegexp(t, "^\\w+$", splited[0])
-	assertElementInSlice(t, splited[1], safeEmailDomains)
+	assertElementInSlice(t, splited[1], freeEmailDomains)
 }
 
 func TestFakerSafeEmailWithOptions(t *testing.T) {
 	f := NewDefault()
-	email := f.SafeEmailWithOptions(EmailOptions{Name: "Fulano"})
+	email := f.FreeEmailWithOptions(EmailOptions{Name: "Fulano"})
 	splited := strings.Split(email, "@")
 
 	assertStringRegexp(t, "fulano", splited[0])
-	assertElementInSlice(t, splited[1], safeEmailDomains)
+	assertElementInSlice(t, splited[1], freeEmailDomains)
 }
 
 func TestFakerPassword(t *testing.T) {
