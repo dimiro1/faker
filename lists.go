@@ -133,6 +133,20 @@ var (
 		"342584825083322",
 	}
 
+	domainSuffixes = []string{
+		".com",
+		".org",
+		".net",
+		".info",
+		".biz",
+		".edu",
+		".com.br",
+		".org.br",
+		".net.br",
+		".info.br",
+		".edu.br",
+	}
+
 	freeEmailDomains = []string{
 		"gmail.com",
 		"hotmail.com",

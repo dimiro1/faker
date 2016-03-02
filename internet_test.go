@@ -5,6 +5,12 @@ import (
 	"testing"
 )
 
+func TestFakerDomainSuffix(t *testing.T) {
+	f := NewDefault()
+	s := f.DomainSuffix()
+	assertElementInSlice(t, s, domainSuffixes)
+}
+
 func TestFakerSafeEmail(t *testing.T) {
 	f := NewDefault()
 	email := f.FreeEmail()

@@ -102,8 +102,9 @@ func (f Faker) DomainName() string {
 	return ""
 }
 
+// DomainSuffix returns a domain suffix such as .com, .com.br
 func (f Faker) DomainSuffix() string {
-	return ""
+	return randomElement(domainSuffixes)
 }
 
 func (f Faker) IPV4() string {
